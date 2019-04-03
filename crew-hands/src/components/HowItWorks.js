@@ -18,13 +18,27 @@ const Section = styled.section`
   background-attachment: scroll;
   background-attachment: fixed;
   height: 100%;
+
+  @media screen and (min-width: 601px) {
+    padding-top: 10px;
+    padding-bottom: 8px;
+    font-size: 1.3em;
+  }
+  @media screen and (min-width: 801px) {
+    padding-top: 20px;
+    padding-bottom: 17px;
+    font-size: 1.5em;
+  }
+  @media screen and (min-width: 1111px) {
+    padding-top: 40px;
+    padding-bottom: 28px;
+    font-size: 2em;
+  }
 `;
 const Title = styled.h3`
   padding-top: 25px;
-  font-size: 18px;
 `;
 const Paragraph = styled.h4`
-  font-size: 14px;
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 25px;

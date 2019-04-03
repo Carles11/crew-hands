@@ -6,6 +6,15 @@ const Section = styled.header`
   justify-content: space-between;
   align-items: center;
   color: #0a6284;
+  @media screen and (min-width: 601px) {
+    font-size: 1.3em;
+  }
+  @media screen and (min-width: 801px) {
+    font-size: 1.8em;
+  }
+  @media screen and (min-width: 1111px) {
+    font-size: 2em;
+  }
 `;
 const Title = styled.h2`
   font-family: "Raleway", sans-serif;

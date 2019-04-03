@@ -15,14 +15,15 @@ const Paragraph = styled.h3`
   text-align: center;
   text-justify: inter-word;
   max-width: 95%;
-  @media screen and (min-width: 801px) {
+
+  @media screen and (min-width: 601px) {
     font-size: 1.7em;
   }
   @media screen and (min-width: 801px) {
     font-size: 2em;
   }
-  @media screen and (min-width: 1011px) {
-    font-size: 4em;
+  @media screen and (min-width: 1111px) {
+    font-size: 3em;
   }
 `;
 
@@ -31,7 +32,7 @@ const HomeTitle = () => {
     <TextBlock>
       <Paragraph>
         Crew-Hands App hilft dir bei der Organisation alle deiner Stage-Hand und
-        Technikern Crew jobs.
+        Technikern jobs.
       </Paragraph>
     </TextBlock>
   );
