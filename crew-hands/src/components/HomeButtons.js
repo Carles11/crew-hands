@@ -7,6 +7,9 @@ const Buttons = styled.section`
   justify-content: space-around;
   opacity: 0.9;
   align-items: center;
+  padding-left: 21%;
+  padding-right: 21%;
+  padding-bottom: 25%;
 `;
 const ButtonL = styled.button`
   border: 1 px solid;

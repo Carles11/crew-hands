@@ -28,17 +28,22 @@ const Paragraph = styled.h4`
 const WhatIsCrewHands = () => {
   return (
     <Section>
-      <Title> Was ist Crew-Hands?</Title>
+      <Title>
+        {" "}
+        Was Crew-Hands App <br />
+        für dich macht
+      </Title>
       <Paragraph>
         Lass der Professionalitätsruf deines Teams nicht wegen Missverständnisse
         bei der Organisation zu beeinflußen.
       </Paragraph>
       <Paragraph>
         Melde dich ein, nutze die App für 10 Jobs völlig kostenlos und bald wird
-        die App dein best tool.
+        die App dein best tool. Darüber sind wir aber sicher.
       </Paragraph>
       <Paragraph>
-        Danach kostet es dir nur 1€ / Job gepostet. Egal wie gross deine Crew.
+        Danach kostet es dir nur 1€ pro geposteten Job. Egal wie gross deine
+        Crew.
       </Paragraph>
     </Section>
   );

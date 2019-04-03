@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import img from "../assets/images/theater-truss.jpg";
 
+import KontoEinlegenButton from "./KontoEinlegenButton";
+
 const Section = styled.section`
   font-family: "Raleway", sans-serif;
   text-align: center;
@@ -34,19 +36,26 @@ const Paragraph = styled.h4`
 const HowItWorks = () => {
   return (
     <Section>
-      <Title>HowItWorks</Title>
+      <Title>Wie es funktioniert</Title>
       <Paragraph>
         Als Crew-Director meldest du erst deine Firma von Technikern- und
-        Stage-Handsvermittlung an. Nur du kannst Personal zu deine Crew
-        einladen. Wenn sie die Einladung akzeptiern und sie schon ein teil
-        deines Crews sind, kannst du anfangen Jobs hochzuladen. Wenn ein neuen
-        Job bei dir eintritt, lädst du die Daten an und die von Dir angewählte
-        Profis erhalten die Daten und Dokumente, die du geschickt hast. Alles im
-        Griff. Jeder hat die gleiche Infos und du erstellst per Knopfdruck eine
-        Liste mit Job Infos und alle Details von deine Crew, die du an deine
-        Kunde mühelos schicken kannst. Er ist Glücklich, weil Ihr organisiert
-        seid. Den Rest übernehmen deine Jungs.
+        Stage-Handsvermittlung an. Nur du kannst Personal zu deinen Team
+        einladen.
       </Paragraph>
+      <Paragraph>
+        Wenn sie die Einladung akzeptieren sind sie schon ein teil deines Teams.
+        Wenn ein neuen Job bei dir eintrift wählst du die Profis, die das
+        Angebot erhalten sollten. Ihnen allen stehen jetzt alle Daten und nötige
+        Dokumente für den Job zur Hand.
+      </Paragraph>
+      <Paragraph>
+        Jeder hat die gleiche Infos und du erstellst per Knopfdruck ein Dokument
+        mit alle Job Infos und auch die Daten deine Crew, die du an deine Kunde
+        mühelos weiterschicken kannst. Er ist Glücklich, weil Ihr organisiert
+        seid. Du bist Glücklich, weil es stimmt. Den Rest übernehmen deine
+        Jungs.
+      </Paragraph>
+      <KontoEinlegenButton />
     </Section>
   );
 };

@@ -6,6 +6,7 @@ import HomeTitle from "../components/HomeTitle";
 import HomeButtons from "../components/HomeButtons";
 import Footer from "../components/Footer";
 import img from "../assets/images/theater-truss.jpg";
+import img2 from "../assets/images/back-stage.jpg";
 import WhatIsCrewHands from "../components/WhatIsCrewHands";
 import HowItWorks from "../components/HowItWorks";
 
@@ -16,7 +17,12 @@ const BgImage = styled.div`
   background-position: bottom center;
   background-attachment: scroll;
   background-attachment: fixed;
-  height: 100vh;
+  height: auto;
+  display: block;
+  max-width: 100%;
+  @media only screen and (min. width: 1011px) {
+    background-image: url(${img2});
+  }
 `;
 
 const Home = () => {
