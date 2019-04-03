@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import img from "../assets/images/theater-truss.jpg";
+import wide from "../assets/images/stage-light.jpg";
 
 import KontoEinlegenButton from "./KontoEinlegenButton";
 
@@ -25,9 +26,12 @@ const Section = styled.section`
     font-size: 1.3em;
   }
   @media screen and (min-width: 801px) {
+    background-position: top;
+    background-image: url(${wide});
     padding-top: 20px;
     padding-bottom: 17px;
     font-size: 1.5em;
+    height: 1000px;
   }
   @media screen and (min-width: 1111px) {
     padding-top: 40px;
@@ -45,6 +49,7 @@ const Paragraph = styled.h4`
   max-width: 95%;
   margin: auto;
   line-height: 1.7;
+  justify-self: center;
 `;
 
 const HowItWorks = () => {

@@ -22,11 +22,7 @@ const ButtonL = styled.button`
   color: white;
   height: 100px;
   width: 100px;
-  @media screen and (min-width: 601px) {
-    border-radius: 100px;
-    font-size: 1.3em;
-    width: 200px;
-    height: 200px;
+  cursor: pointer;
   }
   @media screen and (min-width: 801px) {
     border-radius: 200px;
@@ -38,6 +34,7 @@ const ButtonL = styled.button`
     font-size: 2em;
     width: 350px;
     height: 350px;
+
   }
 `;
 const ButtonR = styled.button`
@@ -51,6 +48,8 @@ const ButtonR = styled.button`
   color: #0a6285;
   width: 100px;
   height: 100px;
+  cursor: pointer;
+
   @media screen and (min-width: 601px) {
     border-radius: 100px;
     font-size: 1.3em;

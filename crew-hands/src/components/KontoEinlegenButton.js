@@ -9,10 +9,20 @@ const Button = styled.button`
   border-radius: 5px;
   font-family: "Raleway", sans-serif;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 1em;
   cursor: pointer;
   margin-bottom: 25px;
   color: white;
+
+  @media screen and (min-width: 601px) {
+    font-size: 1.1em;
+  }
+  @media screen and (min-width: 801px) {
+    font-size: 1.1em;
+  }
+  @media screen and (min-width: 1111px) {
+    font-size: 1.2em;
+  }
 `;
 const KontoEinlegenButton = () => {
   return <Button>Jetzt Konto Einlegen</Button>;
