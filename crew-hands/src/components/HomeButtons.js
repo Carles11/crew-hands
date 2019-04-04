@@ -74,7 +74,7 @@ const HomeButtons = () => {
     <Buttons>
       <ButtonL>Ich bin Crew-Director </ButtonL>
       <div>
-        <Link to="/hands-profile">
+        <Link to="/hand-profile">
           <ButtonR>Ich bin Crew</ButtonR>
         </Link>
       </div>
