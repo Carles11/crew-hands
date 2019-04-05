@@ -9,7 +9,7 @@ import Insurance from "./Insurance";
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-content: space-between;
   @media only screen and (min-width: 601px) {
     padding-left: 170px;
   }

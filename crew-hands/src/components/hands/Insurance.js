@@ -29,7 +29,7 @@ const Buttons = styled.div`
 const Insurance = () => {
   return (
     <div>
-      <SubTitle>Wo du versichert bist:</SubTitle>
+      <SubTitle>Wie du versichert bist:</SubTitle>
 
       <Sliders>
         <Buttons>
