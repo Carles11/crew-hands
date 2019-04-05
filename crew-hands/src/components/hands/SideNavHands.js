@@ -33,17 +33,26 @@ const MenuItem = styled(Link)`
     color: red;
   }
 `;
+const Cross = styled.div`
+  @media only screen and (min-width: 601px) {
+    visibility: hidden;
+  }
+`;
 
-const SideNavHands = () => {
-  return (
-    <SideNav>
-      <HandsCrossMenu handleClose={this.handleClose} />
-      <MenuItem to="/hand-profile">Mein Profil</MenuItem>
-      <MenuItem to="/hand-job-liste">Job Liste</MenuItem>
-      <MenuItem to="/hand-einstellungen">Einstellungen</MenuItem>
-      <MenuItem to="/hand-kontakt">Kontakt</MenuItem>
-    </SideNav>
-  );
-};
+class SideNavHands extends React.Component {
+  render() {
+    return (
+      <SideNav>
+        <Cross>
+          <HandsCrossMenu handleClose={this.props.handleClose} />
+        </Cross>
+        <MenuItem to="/hand-profile">Mein Profil</MenuItem>
+        <MenuItem to="/hand-job-liste">Job Liste</MenuItem>
+        <MenuItem to="/hand-einstellungen">Einstellungen</MenuItem>
+        <MenuItem to="/hand-kontakt">Kontakt</MenuItem>
+      </SideNav>
+    );
+  }
+}
 
 export default SideNavHands;

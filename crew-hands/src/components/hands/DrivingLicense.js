@@ -5,6 +5,7 @@ import SliderButton from "./SliderButton";
 
 const Sliders = styled.section`
   display: flex;
+  justify-content: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
   padding-left: 20px;
@@ -18,42 +19,32 @@ const SubTitle = styled.h2`
 const Label = styled.label`
   font-family: "Raleway", sans-serif;
   font-size: 1.1em;
+  padding-right: 5px;
+  padding-left: 15px;
 `;
 const Buttons = styled.div`
   display: flex;
 `;
-const SliderGroup = () => {
+const DrivingLicense = () => {
   return (
     <div>
-      <SubTitle>Wähle was du gut kannst:</SubTitle>
+      <SubTitle>Was du fahren kannst:</SubTitle>
 
       <Sliders>
         <Buttons>
-          <Label>Tontechnik</Label>
+          <Label>Pkw</Label>
           <SliderButton />
         </Buttons>
         <Buttons>
-          <Label>Lichttechnik</Label>
+          <Label>Lkw</Label>
           <SliderButton />
         </Buttons>
         <Buttons>
-          <Label>Rigging</Label>
+          <Label>Stappler</Label>
           <SliderButton />
         </Buttons>
         <Buttons>
-          <Label>Veranstaltungstechnik</Label>
-          <SliderButton />
-        </Buttons>
-        <Buttons>
-          <Label>Video, Media</Label>
-          <SliderButton />
-        </Buttons>
-        <Buttons>
-          <Label>Stage-hand, allrounder</Label>
-          <SliderButton />
-        </Buttons>
-        <Buttons>
-          <Label>Stage-hand</Label>
+          <Label>Steiger</Label>
           <SliderButton />
         </Buttons>
       </Sliders>
@@ -61,4 +52,4 @@ const SliderGroup = () => {
   );
 };
 
-export default SliderGroup;
+export default DrivingLicense;

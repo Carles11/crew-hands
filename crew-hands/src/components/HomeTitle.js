@@ -21,6 +21,7 @@ const Paragraph = styled.h3`
   }
   @media screen and (min-width: 801px) {
     font-size: 2em;
+    line-height: 1.2;
   }
   @media screen and (min-width: 1111px) {
     font-size: 3em;
@@ -31,8 +32,8 @@ const HomeTitle = () => {
   return (
     <TextBlock>
       <Paragraph>
-        Crew-Hands App hilft dir bei der Organisation alle deiner Stage-Hand und
-        Technikern jobs.
+        Crew-Hands App hilft dir bei der Organisation deiner Crew an Stage-Hand
+        und Technikern jobs.
       </Paragraph>
     </TextBlock>
   );

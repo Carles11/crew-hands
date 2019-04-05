@@ -8,7 +8,7 @@ const Mobile = styled.div`
   padding-right: 25px;
 
   @media only screen and (min-width: 601px) {
-    display: none;
+    visibility: hidden;
   }
 `;
 
@@ -16,7 +16,7 @@ const Desktop = styled.div`
   white-space: nowrap;
 
   @media only screen and (max-width: 600px) {
-    display: none;
+    visibility: hidden;
   }
 `;
 
@@ -39,14 +39,10 @@ class HandsProfileNavigation extends React.Component {
     return (
       <div>
         <Desktop>
-          {this.state.showDropdown ? (
-            <SideNavHands handleClose={this.handleClose} />
-          ) : (
-            <HandsBurgerMenu handleClick={this.handleClick} />
-          )}
+          <SideNavHands />
         </Desktop>
         <Mobile>
-          {this.state.showDropdown ? (
+          {this.state.showSideBar ? (
             <SideNavHands handleClose={this.handleClose} />
           ) : (
             <HandsBurgerMenu handleClick={this.handleClick} />
