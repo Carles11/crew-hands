@@ -26,81 +26,127 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-ul {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
+.padding-left {
+  padding-left: 20px;
+}
+
 /*START CROSS MENU*/
-span {
-  position: relative;
-  height: 65px;
-  /* this can be anything */
-  width: 65px;
-  /* ...but maintain 1:1 aspect ratio */
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
+
+.menu-icon {
+  font-size: 3em;
+  max-width: 45px;
+  display: block;
   cursor: pointer;
+  transition: transform .2s ease;
 }
 
-span::before,
-span::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 9px;
-  /* cross thickness */
-  background: white;
+.menu-icon:hover {
+  transform: scale(0.9);
 }
 
-span::before {
-  transform: rotate(45deg);
+.menu-icon:before,
+.menu-icon:after {
+  line-height: .5;
 }
 
-span::after {
-  transform: rotate(-45deg);
+.menu-icon:before {
+  content: '☰';
+  display: block;
 }
+
+.menu-icon:after {
+  content: '╳';
+  font-size: .75em;
+  font-weight: 800;
+  display: none;
+}
+
+#toggle-menu:checked~label[for="toggle-menu"] .menu-icon {
+  transform: rotate(180deg);
+}
+
+#toggle-menu:checked~label[for="toggle-menu"] .menu-icon:before {
+  display: none;
+}
+
+#toggle-menu:checked~label[for="toggle-menu"] .menu-icon:after {
+  display: block;
+}
+
 
 /*END OF CROSS MENU*/
 /*################################################*/
-/* START INPUTS*/
-/* input,
-span,
-label,
-textarea {
-  font-family: "Raleway", sans-serif;
-  display: block;
-  margin: 10px;
-  padding: 5px;
-  border: none;
-  font-size: 12px;
+/* START INPUTS  */
+.inp {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 280px;
 }
 
-textarea:focus,
-input:focus {
-  outline: 0;
+.inp .label {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  font-size: 16px;
+  color: #9098a9;
+  font-weight: 500;
+  transform-origin: 0 0;
+  transition: all 0.2s ease;
 }
 
-/* Question */
+.inp .border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: #07f;
+  transform: scaleX(0);
+  transform-origin: 0 0;
+  transition: all 0.15s ease;
+}
 
-/* input.question,
-textarea.question {
-  font-size: 24px;
-  font-weight: 300;
-  border-radius: 2px;
-  margin: 0;
-  border: none;
-  width: 80%;
-  background: rgba(0, 0, 0, 0);
-  transition: padding-top 0.2s ease, margin-top 0.2s ease;
-  overflow-x: hidden;
-  /* Hack to make "rows" attribute apply in Firefox. */
+.inp input {
+  -webkit-appearance: none;
+  width: 100%;
+  border: 0;
+  font-family: inherit;
+  padding: 12px 0;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid #c8ccd4;
+  background: none;
+  border-radius: 0;
+  color: #223254;
+  transition: all 0.15s ease;
+}
 
-/* Underline and Placeholder */
+.inp input:hover {
+  background: rgba(34, 50, 84, 0.03);
+}
+
+.inp input:not(:placeholder-shown)+span {
+  color: #5a667f;
+  transform: translateY(-26px) scale(0.75);
+}
+
+.inp input:focus {
+  background: none;
+  outline: none;
+}
+
+.inp input:focus+span {
+  color: #07f;
+  transform: translateY(-26px) scale(0.75);
+}
+
+.inp input:focus+span+.border {
+  transform: scaleX(1);
+}

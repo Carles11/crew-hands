@@ -9,6 +9,7 @@ const Section = styled.section`
 `;
 const Upload = styled.div`
   border: 2px solid lightgrey;
+  border-radius: 5px;
   width: 640px;
   height: 200px;
   font-size: 18px;
@@ -22,13 +23,18 @@ function UploadFiles() {
 
   return (
     <Section>
-      <h2>Lade deine Dokumente hoch:</h2>
+      <h2>Upload Bereich</h2>
       <Upload {...getRootProps()}>
         <input {...getInputProps()} />
         {isDragActive ? (
           <p>Drop it like it´s hot!</p>
         ) : (
-          <p>Drag 'n' drop oder click hier</p>
+          <p>
+            Drag 'n' drop oder clicke hier um Dateien hochzuladen.
+            <br />
+            Hier kannst du Krankenversicherungsscheine, deine Ausbildungs
+            Unterlagen oder eine Kopie deine Führerscheine hochladen.
+          </p>
         )}
       </Upload>
     </Section>

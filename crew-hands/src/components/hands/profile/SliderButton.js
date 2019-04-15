@@ -60,9 +60,9 @@ const Container = styled.div`
 const SliderButton = () => {
   return (
     <Container>
-      <label class="switch" for="checkbox">
+      <label className="switch" htmlFor="checkbox">
         <input type="checkbox" id="checkbox" />
-        <div class="slider round" />
+        <div className="slider round" />
       </label>
     </Container>
   );

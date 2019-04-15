@@ -20,7 +20,7 @@ const Desktop = styled.div`
   }
 `;
 
-class HandsProfileNavigation extends React.Component {
+class HandsNavigation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -53,4 +53,4 @@ class HandsProfileNavigation extends React.Component {
   }
 }
 
-export default HandsProfileNavigation;
+export default HandsNavigation;

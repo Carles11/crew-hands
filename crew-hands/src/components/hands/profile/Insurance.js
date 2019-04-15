@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import SliderButton from "./SliderButton";
-import UploadFiles from "./UploadFiles";
 
 const Sliders = styled.section`
   display: flex;
@@ -37,8 +36,6 @@ const Insurance = () => {
           <SliderButton />
         </Buttons>
       </Sliders>
-
-      <UploadFiles />
     </div>
   );
 };

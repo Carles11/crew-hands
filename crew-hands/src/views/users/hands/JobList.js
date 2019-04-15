@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 import Header from "../../../components/Header";
-import HandsProfileNavigation from "../../../components/hands/HandsProfileNavigation";
-import HandsJobListe from "../../../components/hands/HandsJobListe";
+import HandsNavigation from "../../../components/hands/navigation/HandsNavigation";
+import HandsJobListe from "../../../components/hands/joblist/HandsJobListe";
 
 const MainDiv = styled.div`
   display: flex;
@@ -21,7 +21,7 @@ const JobList = () => {
     <MainDiv>
       <Header />
       <Section>
-        <HandsProfileNavigation />
+        <HandsNavigation />
         <HandsJobListe />
       </Section>
     </MainDiv>

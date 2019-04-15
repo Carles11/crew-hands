@@ -5,6 +5,7 @@
   "dependencies": {
     "muicss": "^0.9.41",
     "react": "^16.8.6",
+    "react-avatar-edit": "^0.8.2",
     "react-dom": "^16.8.6",
     "react-dropzone": "^10.1.0",
     "react-router": "^5.0.0",
