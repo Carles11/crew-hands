@@ -15,14 +15,41 @@ const Section = styled.section`
   padding-left: 20px;
 `;
 
-const InputsGroup = () => {
-  return (
-    <Section>
-      <h2>Profil</h2>
-      <InputName />
-    </Section>
-  );
-};
+class InputsGroup extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      firstName: "",
+      lastName: ""
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleChange(e) {
+    this.setState({ [e.target.name]: String(e.target.value) });
+  }
+  handleSubmit() {
+    debugger;
+    alert(
+      `Submitting First name ${this.state.firstName} and Last name ${
+        this.state.lastName
+      }`
+    );
+  }
+  render() {
+    return (
+      <Section>
+        <h2>Profil</h2>
+        <InputName
+          firstName={this.state.firstName}
+          lastName={this.state.lastName}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
+      </Section>
+    );
+  }
+}
 
 export default InputsGroup;
 
