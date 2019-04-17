@@ -12,13 +12,12 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-content: space-between;
-
   @media only screen and (min-width: 601px) {
     padding-left: 140px;
   }
 `;
 
-const HandsProfileForm = () => {
+const SuppliersProfileForm = () => {
   return (
     <Section>
       <InputsGroup />
@@ -31,4 +30,4 @@ const HandsProfileForm = () => {
   );
 };
 
-export default HandsProfileForm;
+export default SuppliersProfileForm;

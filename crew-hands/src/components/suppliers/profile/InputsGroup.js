@@ -59,7 +59,7 @@ class InputsGroup extends React.Component {
   render() {
     return (
       <Form onSubmit={this.handleSubmit}>
-        <h2>Stage-Hand Profil</h2>
+        <h2>Supplier Profil</h2>
         <InputName
           firstName={this.state.firstName}
           lastName={this.state.lastName}

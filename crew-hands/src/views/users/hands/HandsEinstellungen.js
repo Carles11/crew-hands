@@ -3,22 +3,24 @@ import styled from "styled-components";
 
 import Header from "../../../components/Header";
 import HandsNavigation from "../../../components/hands/navigation/HandsNavigation";
-import HandsProfileForm from "../../../components/hands/profile/HandsProfileForm";
 
 const Section = styled.section`
   font-family: "Raleway", sans-serif;
   padding-left: 20px;
+  @media only screen and (min-width: 600px) {
+    padding-left: 180px;
+  }
 `;
-const HandProfile = () => {
+
+const HandsEinstellungen = () => {
   return (
     <div>
       <Header />
       <Section>
         <HandsNavigation />
-        <HandsProfileForm />
+        <h2>Stage-hand Einstellungen</h2>
       </Section>
     </div>
   );
 };
-
-export default HandProfile;
+export default HandsEinstellungen;

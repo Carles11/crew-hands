@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import img from "../assets/images/theater-truss.jpg";
-import wide from "../assets/images/stage-light.jpg";
+import img from "../../assets/images/theater-truss.jpg";
+import wide from "../../assets/images/stage-light.jpg";
 
 import KontoEinlegenButton from "./KontoEinlegenButton";
 

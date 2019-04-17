@@ -1,6 +1,6 @@
 import React from "react";
 
-class HandsCrossMenu extends React.Component {
+class SuppliersCrossMenu extends React.Component {
   render() {
     return (
       <div>
@@ -14,6 +14,6 @@ class HandsCrossMenu extends React.Component {
   }
 }
 
-export default HandsCrossMenu;
+export default SuppliersCrossMenu;
 
 //<span onClick={this.props.handleClose} />;

@@ -3,29 +3,25 @@ import styled from "styled-components";
 
 import Header from "../../../components/Header";
 import HandsNavigation from "../../../components/hands/navigation/HandsNavigation";
-import HandsJobListe from "../../../components/hands/joblist/HandsJobListe";
 
-const MainDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-content: space-between;
-  @media only screen and (min-width: 601px) {
-    padding-left: 170px;
-  }
-`;
 const Section = styled.section`
   font-family: "Raleway", sans-serif;
+  padding-left: 20px;
+  @media only screen and (min-width: 600px) {
+    padding-left: 180px;
+  }
 `;
-const JobList = () => {
+
+const HandsContact = () => {
   return (
-    <MainDiv>
+    <div>
       <Header />
       <Section>
         <HandsNavigation />
-        <HandsJobListe />
+        <h2>Hands Kontakt</h2>
       </Section>
-    </MainDiv>
+    </div>
   );
 };
 
-export default JobList;
+export default HandsContact;

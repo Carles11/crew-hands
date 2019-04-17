@@ -24,6 +24,12 @@ const ButtonL = styled.button`
   width: 100px;
   cursor: pointer;
   }
+  @media screen and (min-width: 601px) {
+    border-radius: 100px;
+    font-size: 1.3em;
+    width: 200px;
+    height: 200px;
+  }
   @media screen and (min-width: 801px) {
     border-radius: 200px;
     font-size: 1.8em;
@@ -72,9 +78,11 @@ const ButtonR = styled.button`
 const HomeButtons = () => {
   return (
     <Buttons>
-      <ButtonL>Ich bin Crew-Director </ButtonL>
+      <Link to="/suppliers-profile">
+        <ButtonL>Ich bin Crew-Director </ButtonL>
+      </Link>
       <div>
-        <Link to="/hand-profile">
+        <Link to="/hands-profile">
           <ButtonR>Ich bin Crew</ButtonR>
         </Link>
       </div>

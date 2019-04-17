@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import HandsCrossMenu from "./HandsCrossMenu";
+import SuppliersCrossMenu from "./SuppliersCrossMenu";
 
 const SideNav = styled.nav`
   font-family: "Raleway", sans-serif;
@@ -39,20 +39,20 @@ const Cross = styled.div`
   }
 `;
 
-class SideNavHands extends React.Component {
+class SideNavSuppliers extends React.Component {
   render() {
     return (
       <SideNav>
         <Cross>
-          <HandsCrossMenu handleClose={this.props.handleClose} />
+          <SuppliersCrossMenu handleClose={this.props.handleClose} />
         </Cross>
-        <MenuItem to="/hands-profile">Mein Profil</MenuItem>
-        <MenuItem to="/hands-job-list">Job Liste</MenuItem>
-        <MenuItem to="/hands-einstellungen">Einstellungen</MenuItem>
-        <MenuItem to="/hands-kontakt">Kontakt</MenuItem>
+        <MenuItem to="/suppliers-profile">Mein Profil</MenuItem>
+        <MenuItem to="/suppliers-job-list">Job Liste</MenuItem>
+        <MenuItem to="/suppliers-einstellungen">Einstellungen</MenuItem>
+        <MenuItem to="/suppliers-kontakt">Kontakt</MenuItem>
       </SideNav>
     );
   }
 }
 
-export default SideNavHands;
+export default SideNavSuppliers;
