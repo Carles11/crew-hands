@@ -12,14 +12,18 @@ import HandProfile from "./views/users/hands/HandProfile";
 import HandsContact from "./views/users/hands/HandsContact";
 import HandsEinstellungen from "./views/users/hands/HandsEinstellungen";
 import HandsJobList from "./views/users/hands/HandsJobList";
+import PrivacyStatement from "./views/PrivacyStatement";
+import Imprint from "./views/Imprint";
 
 const Routes = () => {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
+      <Route exact path="/datenschutzerklaerung" component={PrivacyStatement} />
+      <Route exact path="/impressum" component={Imprint} />
+
       <Route path="/suppliers-profile" component={SupplierProfile} />
       <Route path="/suppliers-kontakt" component={SuppliersContact} />
-
       <Route path="/invite-hands" component={InviteHands} />
       <Route path="/suppliers-job-list" component={SuppliersJobList} />
       <Route

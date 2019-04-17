@@ -11,7 +11,6 @@ const Section = styled.section`
   min-height: 80vh;
 
   @media only screen and (min-width: 600px) {
-    padding-left: 180px;
   }
 `;
 

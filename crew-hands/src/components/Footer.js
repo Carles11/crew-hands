@@ -1,5 +1,7 @@
+/* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Section = styled.ul`
   display: flex;
@@ -44,9 +46,17 @@ const FooterItem = styled.li`
 const Footer = () => {
   return (
     <Section>
-      <FooterItem>Datenschutzerklärung</FooterItem>
-      <FooterItem>Impressum</FooterItem>
-      <FooterItem>&copy; CriX Design</FooterItem>
+      <FooterItem>
+        <Link to="/datenschutzerklaerung">Datenschutzerklärung</Link>
+      </FooterItem>
+      <FooterItem>
+        <Link to="/impressum">Impressum</Link>
+      </FooterItem>
+      <FooterItem>
+        <a href="https://crix.design" target="_blank">
+          &copy; CriX Design
+        </a>
+      </FooterItem>
     </Section>
   );
 };
