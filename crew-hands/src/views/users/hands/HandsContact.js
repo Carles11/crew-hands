@@ -7,6 +7,8 @@ import HandsNavigation from "../../../components/hands/navigation/HandsNavigatio
 const Section = styled.section`
   font-family: "Raleway", sans-serif;
   padding-left: 20px;
+  min-height: 80vh;
+
   @media only screen and (min-width: 600px) {
     padding-left: 180px;
   }

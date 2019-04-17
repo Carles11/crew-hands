@@ -19,11 +19,9 @@ const Section = styled.ul`
   height: 80px;
   @media only screen and (min-width: 601px) {
     flex-direction: row;
-    justify-content: flex-end;
-    margin-bottom: 0;
-    padding-bottom: 0;
+
     height: 100px;
-    font-size: 1.2em;
+    font-size: 0.2;
   }
   @media only screen and (min-width: 801px) {
     flex-direction: row;
