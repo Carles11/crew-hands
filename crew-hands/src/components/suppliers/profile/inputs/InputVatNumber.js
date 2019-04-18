@@ -1,6 +1,6 @@
 import React from "react";
 
-class InputAboutMe extends React.Component {
+class InputVatNumber extends React.Component {
   render() {
     return (
       <section>
@@ -8,11 +8,11 @@ class InputAboutMe extends React.Component {
           <input
             type="textarea"
             id="inp"
-            name="aboutme"
-            value={this.props.aboutMe}
+            name="vatNumber"
+            value={this.props.vatNumber}
             onChange={this.props.handleChange}
           />
-          <span className="label">Branche der Firma</span>
+          <span className="label">Ust.Id.Nr.</span>
           <span className="border" />
         </label>
       </section>
@@ -20,4 +20,4 @@ class InputAboutMe extends React.Component {
   }
 }
 
-export default InputAboutMe;
+export default InputVatNumber;

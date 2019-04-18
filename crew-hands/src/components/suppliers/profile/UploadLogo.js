@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import Avatar from "react-avatar-edit";
 
-import img from "../../../assets/images/avatar.png";
+import img from "../../../assets/logos/crew-hands-logo.png";
 
-class UploadAvatar extends React.Component {
+class UploadLogo extends React.Component {
   constructor(props) {
     super(props);
     const src = "./example/einshtein.jpg";
@@ -39,7 +39,7 @@ class UploadAvatar extends React.Component {
     `;
     return (
       <div className="padding-left">
-        <h2>Click darauf um dein Bild hochzuladen:</h2>
+        <h2>Click darauf um dein Firmenlogo hochzuladen:</h2>
         <Avatar
           width={290}
           height={195}
@@ -56,4 +56,4 @@ class UploadAvatar extends React.Component {
   }
 }
 
-export default UploadAvatar;
+export default UploadLogo;

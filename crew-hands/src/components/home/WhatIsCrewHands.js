@@ -28,14 +28,17 @@ const Section = styled.section`
 `;
 const Title = styled.h3`
   padding-top: 25px;
+  font-size: 2em;
+  line-height: 1;
 `;
-const Paragraph = styled.h4`
-  padding-left: 15px;
-  padding-right: 15px;
+const Paragraph = styled.p`
   line-height: 1.7;
-  padding-bottom: 25px;
+  font-size: 0.9em;
   max-width: 95%;
+  padding-right: 15px;
+  padding-bottom: 25px;
   margin: auto;
+  padding-left: 15px;
 `;
 
 const WhatIsCrewHands = () => {

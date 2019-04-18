@@ -50,6 +50,7 @@ class SideNavHands extends React.Component {
         <MenuItem to="/hands-job-list">Job Liste</MenuItem>
         <MenuItem to="/hands-einstellungen">Einstellungen</MenuItem>
         <MenuItem to="/hands-kontakt">Kontakt</MenuItem>
+        <MenuItem to="/log-out">Abmelden</MenuItem>
       </SideNav>
     );
   }

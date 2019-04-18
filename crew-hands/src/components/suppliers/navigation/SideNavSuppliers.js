@@ -48,8 +48,10 @@ class SideNavSuppliers extends React.Component {
         </Cross>
         <MenuItem to="/suppliers-profile">Mein Profil</MenuItem>
         <MenuItem to="/suppliers-job-list">Job Liste</MenuItem>
+        <MenuItem to="/suppliers-invite-hands">Deine Crew</MenuItem>
         <MenuItem to="/suppliers-einstellungen">Einstellungen</MenuItem>
         <MenuItem to="/suppliers-kontakt">Kontakt</MenuItem>
+        <MenuItem to="/log-out">Abmelden</MenuItem>
       </SideNav>
     );
   }

@@ -41,8 +41,10 @@ const Section = styled.section`
 `;
 const Title = styled.h3`
   padding-top: 25px;
+  font-size: 2em;
+  line-height: 1;
 `;
-const Paragraph = styled.h4`
+const Paragraph = styled.p`
   padding-left: 15px;
   padding-right: 15px;
   padding-bottom: 25px;

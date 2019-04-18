@@ -1,18 +1,18 @@
 import React from "react";
 
-class InputAboutMe extends React.Component {
+class Email extends React.Component {
   render() {
     return (
       <section>
         <label htmlFor="inp" className="inp">
           <input
-            type="textarea"
+            type="dropdown"
             id="inp"
-            name="aboutme"
-            value={this.props.aboutMe}
+            name="dropdown"
+            value={this.props.email}
             onChange={this.props.handleChange}
           />
-          <span className="label">Branche der Firma</span>
+          <span className="label">Filter</span>
           <span className="border" />
         </label>
       </section>
@@ -20,4 +20,4 @@ class InputAboutMe extends React.Component {
   }
 }
 
-export default InputAboutMe;
+export default Email;

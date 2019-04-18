@@ -24,7 +24,7 @@ const Routes = () => {
 
       <Route path="/suppliers-profile" component={SupplierProfile} />
       <Route path="/suppliers-kontakt" component={SuppliersContact} />
-      <Route path="/invite-hands" component={InviteHands} />
+      <Route path="/suppliers-invite-hands" component={InviteHands} />
       <Route path="/suppliers-job-list" component={SuppliersJobList} />
       <Route
         path="/suppliers-einstellungen"

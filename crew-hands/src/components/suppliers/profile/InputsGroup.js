@@ -8,6 +8,7 @@ import InputOrtPlz from "./inputs/InputOrtPlz";
 import InputTelephone from "./inputs/InputTelephone";
 import InputAboutMe from "./inputs/InputAboutMe";
 import InputSubmitButton from "./inputs/InputSubmitButton";
+import InputVatNumber from "./inputs/InputVatNumber";
 
 const Form = styled.form`
   max-width: 90%;
@@ -26,6 +27,8 @@ class InputsGroup extends React.Component {
       plz: "",
       telephone: "",
       aboutMe: "",
+      vatNumber: "",
+
       hands: [
         {
           id: "",
@@ -61,8 +64,8 @@ class InputsGroup extends React.Component {
       <Form onSubmit={this.handleSubmit}>
         <h2>Supplier Profil</h2>
         <InputName
-          firstName={this.state.firstName}
-          lastName={this.state.lastName}
+          firmName={this.state.firmName}
+          contactName={this.state.contactName}
           hands={this.state.hands}
           handleChange={this.handleChange}
         />
@@ -81,10 +84,17 @@ class InputsGroup extends React.Component {
           handleChange={this.handleChange}
         />
         <InputAboutMe
-          aboutMe={this.state.aboutme}
+          aboutMe={this.state.aboutMe}
           handleChange={this.handleChange}
         />
-        <InputSubmitButton />
+        <InputVatNumber
+          aboutMe={this.state.aboutMe}
+          handleChange={this.handleChange}
+        />
+        <InputSubmitButton
+          vatNumber={this.state.vatNumber}
+          handleChange={this.handleChange}
+        />
       </Form>
     );
   }

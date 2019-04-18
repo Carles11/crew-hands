@@ -3,10 +3,9 @@ import styled from "styled-components";
 
 import Categories from "./Categories";
 import InputsGroup from "./InputsGroup";
-import DrivingLicense from "./DrivingLicense";
 import Insurance from "./Insurance";
 import UploadFiles from "./UploadFiles";
-import UploadAvatar from "./UploadAvatar";
+import UploadLogo from "./UploadLogo";
 
 const Section = styled.section`
   display: flex;
@@ -21,9 +20,8 @@ const SuppliersProfileForm = () => {
   return (
     <Section>
       <InputsGroup />
-      <UploadAvatar />
+      <UploadLogo />
       <Categories />
-      <DrivingLicense />
       <Insurance />
       <UploadFiles />
     </Section>

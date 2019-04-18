@@ -1,10 +1,9 @@
 import React from "react";
-
 import styled from "styled-components";
 
 import Header from "../../../components/Header";
 import SuppliersNavigation from "../../../components/suppliers/navigation/SuppliersNavigation";
-import JobList from "./JobList";
+import DropDown from "../../../components/suppliers/profile/DropDown";
 
 const Section = styled.section`
   font-family: "Raleway", sans-serif;
@@ -37,16 +36,20 @@ const Button = styled.button`
     font-size: 1.2em;
   }
 `;
-const SuppliersJobList = () => {
+const JobList = () => {
   return (
     <div>
       <Header />
       <Section>
         <SuppliersNavigation />
-        <h2>Suppliers Job List</h2>
-        <Button>Neuen Job eintragen</Button> <JobList />
+        <h2>Job List loop results</h2>
+        <Button>Ausgewählte löschen</Button>
+        {""}
+        <Button>Alle löschen</Button>
+        <DropDown />
       </Section>
     </div>
   );
 };
-export default SuppliersJobList;
+
+export default JobList;

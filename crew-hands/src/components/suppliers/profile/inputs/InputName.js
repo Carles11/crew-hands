@@ -19,22 +19,22 @@ class InputName extends React.Component {
           <input
             type="text"
             id="inp"
-            name="firstName"
-            value={this.props.firstName}
+            name="firmName"
+            value={this.props.firmName}
             onChange={this.props.handleChange}
           />
-          <span className="label">Vorname</span>
+          <span className="label">Firmen Name</span>
           <span className="border" />
         </label>
         <label htmlFor="inp" className="inp">
           <input
             type="text"
             id="inp"
-            name="lastName"
-            value={this.props.lastName}
+            name="contactName"
+            value={this.props.contactName}
             onChange={this.props.handleChange}
           />
-          <span className="label">Nachname</span>
+          <span className="label">Kontaktperson</span>
           <span className="border" />
         </label>
       </section>
