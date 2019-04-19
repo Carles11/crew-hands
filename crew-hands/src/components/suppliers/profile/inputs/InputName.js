@@ -15,27 +15,33 @@ class InputName extends React.Component {
   render() {
     return (
       <section>
-        <label htmlFor="inp" className="inp">
+        <label>
           <input
             type="text"
-            id="inp"
             name="firmName"
             value={this.props.firmName}
             onChange={this.props.handleChange}
           />
-          <span className="label">Firmen Name</span>
-          <span className="border" />
+          <span>Firmen Name</span>
         </label>
-        <label htmlFor="inp" className="inp">
+        <label>
           <input
             type="text"
-            id="inp"
             name="contactName"
             value={this.props.contactName}
             onChange={this.props.handleChange}
           />
-          <span className="label">Kontaktperson</span>
-          <span className="border" />
+          <span>Kontaktperson</span>
+        </label>
+
+        <label>
+          <input
+            type="text"
+            name="userName"
+            value={this.props.userName}
+            onChange={this.props.handleChange}
+          />
+          <span className="label">Benutzername</span>
         </label>
       </section>
     );

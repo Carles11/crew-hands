@@ -4,16 +4,14 @@ class InputVatNumber extends React.Component {
   render() {
     return (
       <section>
-        <label htmlFor="inp" className="inp">
+        <label>
           <input
-            type="textarea"
-            id="inp"
+            type="text"
             name="vatNumber"
             value={this.props.vatNumber}
             onChange={this.props.handleChange}
           />
-          <span className="label">Ust.Id.Nr.</span>
-          <span className="border" />
+          <span>Ust.Id.Nr.</span>
         </label>
       </section>
     );

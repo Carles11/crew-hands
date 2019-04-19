@@ -28,7 +28,7 @@ const Buttons = styled.div`
 const Categories = () => {
   return (
     <div>
-      <SubTitle>Wähle, wo du gut bist:</SubTitle>
+      <SubTitle>Welche Jobs bietet deine Firma an?</SubTitle>
       <Sliders>
         <Buttons>
           <Label>Tontechnik</Label>
@@ -47,7 +47,7 @@ const Categories = () => {
           <SliderButton />
         </Buttons>
         <Buttons>
-          <Label>Video, Media</Label>
+          <Label>Video-, Mediatechnik</Label>
           <SliderButton />
         </Buttons>
         <Buttons>

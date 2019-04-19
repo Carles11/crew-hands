@@ -6,7 +6,8 @@ class InputName extends React.Component {
       hands: this.props.hands.concat([
         {
           firstName: `${this.props.firstName}`,
-          lastName: `${this.props.lastName}`
+          lastName: `${this.props.lastName}`,
+          userName: `${this.props.userName}`
         }
       ])
     });
@@ -35,6 +36,18 @@ class InputName extends React.Component {
             onChange={this.props.handleChange}
           />
           <span className="label">Nachname</span>
+          <span className="border" />{" "}
+        </label>
+
+        <label htmlFor="inp" className="inp">
+          <input
+            type="text"
+            id="inp"
+            name="userName"
+            value={this.props.userName}
+            onChange={this.props.handleChange}
+          />
+          <span className="label">User name</span>
           <span className="border" />
         </label>
       </section>

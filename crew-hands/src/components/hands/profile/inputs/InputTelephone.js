@@ -1,23 +1,21 @@
 import React from "react";
 
-class Telephone extends React.Component {
+class InputTelephone extends React.Component {
   render() {
     return (
       <section>
-        <label htmlFor="inp" className="inp">
+        <label>
           <input
             type="text"
-            id="inp"
             name="telephone"
             value={this.props.telephone}
             onChange={this.props.handleChange}
           />
-          <span className="label">Telefon</span>
-          <span className="border" />
+          <span>Telefon</span>
         </label>
       </section>
     );
   }
 }
 
-export default Telephone;
+export default InputTelephone;

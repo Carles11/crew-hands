@@ -35,7 +35,6 @@ class UploadLogo extends React.Component {
   render() {
     const Button = styled.button`
       margin-left: 15px;
-      cursor: pointer;
     `;
     return (
       <div className="padding-left">

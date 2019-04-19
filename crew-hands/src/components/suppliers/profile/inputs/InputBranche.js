@@ -1,6 +1,6 @@
 import React from "react";
 
-class InputAboutMe extends React.Component {
+class InputBranche extends React.Component {
   render() {
     return (
       <section>
@@ -11,11 +11,11 @@ class InputAboutMe extends React.Component {
             value={this.props.aboutMe}
             onChange={this.props.handleChange}
           />
-          <span>Über mich</span>
+          <span>Branche der Firma</span>
         </label>
       </section>
     );
   }
 }
 
-export default InputAboutMe;
+export default InputBranche;

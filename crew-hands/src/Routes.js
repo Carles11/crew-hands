@@ -1,7 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import Home from "./views/Home";
 import InviteHands from "./views/users/suppliers/InviteHands";
 import SupplierProfile from "./views/users/suppliers/SupplierProfile";
 import SuppliersContact from "./views/users/suppliers/SuppliersContact";
@@ -12,6 +11,8 @@ import HandProfile from "./views/users/hands/HandProfile";
 import HandsContact from "./views/users/hands/HandsContact";
 import HandsEinstellungen from "./views/users/hands/HandsEinstellungen";
 import HandsJobList from "./views/users/hands/HandsJobList";
+
+import Home from "./views/Home";
 import PrivacyStatement from "./views/PrivacyStatement";
 import Imprint from "./views/Imprint";
 

@@ -6,7 +6,7 @@ import InputEmail from "./inputs/InputEmail";
 import InputAddress from "./inputs/InputAddress";
 import InputOrtPlz from "./inputs/InputOrtPlz";
 import InputTelephone from "./inputs/InputTelephone";
-import InputAboutMe from "./inputs/InputAboutMe";
+import InputBranche from "./inputs/InputBranche";
 import InputSubmitButton from "./inputs/InputSubmitButton";
 import InputVatNumber from "./inputs/InputVatNumber";
 
@@ -21,25 +21,27 @@ class InputsGroup extends React.Component {
     this.state = {
       firstName: "",
       lastName: "",
+      userName: "",
       address: "",
       email: "",
       ort: "",
       plz: "",
       telephone: "",
-      aboutMe: "",
+      branche: "",
       vatNumber: "",
 
       hands: [
         {
-          id: "",
           firstName: "",
           lastName: "",
+          userName: "",
           address: "",
           email: "",
           ort: "",
           plz: "",
           telephone: "",
-          aboutMe: ""
+          branche: "",
+          vatNumber: ""
         }
       ]
     };
@@ -83,8 +85,8 @@ class InputsGroup extends React.Component {
           telephone={this.state.telephone}
           handleChange={this.handleChange}
         />
-        <InputAboutMe
-          aboutMe={this.state.aboutMe}
+        <InputBranche
+          branche={this.state.branche}
           handleChange={this.handleChange}
         />
         <InputVatNumber

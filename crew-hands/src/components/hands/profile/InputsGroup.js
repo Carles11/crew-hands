@@ -20,17 +20,18 @@ class InputsGroup extends React.Component {
     this.state = {
       firstName: "",
       lastName: "",
+      userName: "",
       address: "",
       email: "",
       ort: "",
       plz: "",
       telephone: "",
       aboutMe: "",
-      hands: [
+      users: [
         {
-          id: "",
           firstName: "",
           lastName: "",
+          userName: "",
           address: "",
           email: "",
           ort: "",
@@ -48,11 +49,11 @@ class InputsGroup extends React.Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    const { firstName, lastName, hands } = this.state;
+    const { firstName, lastName, users } = this.state;
     alert(
-      `Incorporated: ${firstName} ${lastName} to hands list. ${
-        hands.length
-      } hands on that list`
+      `Incorporated: ${firstName} ${lastName} to users list. ${
+        users.length
+      } users on that list`
     );
   }
 
@@ -63,7 +64,8 @@ class InputsGroup extends React.Component {
         <InputName
           firstName={this.state.firstName}
           lastName={this.state.lastName}
-          hands={this.state.hands}
+          userName={this.state.userName}
+          users={this.state.users}
           handleChange={this.handleChange}
         />
         <InputAddress

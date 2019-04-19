@@ -4,16 +4,14 @@ class Email extends React.Component {
   render() {
     return (
       <section>
-        <label htmlFor="inp" className="inp">
+        <label>
           <input
             type="email"
-            id="inp"
             name="email"
             value={this.props.email}
             onChange={this.props.handleChange}
           />
-          <span className="label">E-mail</span>
-          <span className="border" />
+          <span>E-mail</span>
         </label>
       </section>
     );
