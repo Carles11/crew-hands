@@ -1,14 +1,7 @@
 import React from "react";
-import styled from "styled-components";
 
-const Button = styled.button`
-  margin-left: 15px;
-  cursor: pointer;
-`;
-class InputSubmitButton extends React.Component {
-  render() {
-    return <Button>Speichern</Button>;
-  }
-}
+const InputSubmitButton = () => {
+  return <button>Speichern</button>;
+};
 
 export default InputSubmitButton;

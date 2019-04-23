@@ -7,7 +7,6 @@ import InputAddress from "./inputs/InputAddress";
 import InputOrtPlz from "./inputs/InputOrtPlz";
 import InputTelephone from "./inputs/InputTelephone";
 import InputAboutMe from "./inputs/InputAboutMe";
-import InputSubmitButton from "./inputs/InputSubmitButton";
 
 const Form = styled.form`
   max-width: 90%;
@@ -86,7 +85,6 @@ class InputsGroup extends React.Component {
           aboutMe={this.state.aboutme}
           handleChange={this.handleChange}
         />
-        <InputSubmitButton />
       </Form>
     );
   }

@@ -7,6 +7,7 @@ import DrivingLicense from "./DrivingLicense";
 import Insurance from "./Insurance";
 import UploadFiles from "./UploadFiles";
 import UploadAvatar from "./UploadAvatar";
+import InputSubmitButton from "./inputs/InputSubmitButton";
 
 const Section = styled.section`
   display: flex;
@@ -27,6 +28,7 @@ const HandsProfileForm = () => {
       <DrivingLicense />
       <Insurance />
       <UploadFiles />
+      <InputSubmitButton />
     </Section>
   );
 };

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import InputClientName from "./inputs/InputClientName";
 
 const AddJobForm = props => {
   const initialFormState = { id: null, client: "", category: "" };
@@ -20,11 +21,11 @@ const AddJobForm = props => {
       }}
     >
       <label>Kunde</label>
-      <input
+      <InputClientName
         type="text"
         name="client"
-        value={job.client}
-        onChange={handleInputChange}
+        client={job.client}
+        handleInput={handleInputChange}
       />
       <label>Job Kategorie</label>
       <input

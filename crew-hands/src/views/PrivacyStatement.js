@@ -16,28 +16,6 @@ const Section = styled.section`
     padding-right: 80px;
   }
 `;
-const Button = styled.button`
-  background-color: #ffffff;
-  border: 2px solid #0a6285;
-  color: #0a6285;
-  border-radius: 5px;
-  font-family: "Raleway", sans-serif;
-  font-weight: bold;
-  font-size: 0.8em;
-  cursor: pointer;
-  padding: 4px 15px;
-  opacity: 0.8;
-
-  @media screen and (min-width: 601px) {
-    font-size: 1.1em;
-  }
-  @media screen and (min-width: 801px) {
-    font-size: 1.1em;
-  }
-  @media screen and (min-width: 1111px) {
-    font-size: 1.2em;
-  }
-`;
 
 const PrivacyStatement = () => {
   return (
@@ -243,9 +221,9 @@ const PrivacyStatement = () => {
             </a>
           </small>
         </p>
-        <Button>
-          <Link to="/">Home</Link>
-        </Button>
+        <button className="button muted-button">
+          <Link to="/">Zum Startseite</Link>
+        </button>
       </Section>
     </div>
   );

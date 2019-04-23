@@ -59,7 +59,7 @@ const JobList = () => {
         </div>
 
         <div className="flex-large">
-          <h2>Aktuelle Jobs</h2>
+          <h2>Aktuelle Jobs ({jobs.length})</h2>
           <JobTable jobs={jobs} editRow={editRow} deleteJob={deleteJob} />
         </div>
       </div>
