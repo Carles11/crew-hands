@@ -6,6 +6,8 @@ const JobTable = props => (
       <tr>
         <th>Kunde</th>
         <th>Job Kategorie</th>
+        <th>Job Datum</th>
+
         <th />
       </tr>
     </thead>
@@ -15,6 +17,8 @@ const JobTable = props => (
           <tr key={job.id}>
             <td>{job.client}</td>
             <td>{job.category}</td>
+            <td>{job.date}</td>
+
             <td>
               <button
                 onClick={() => {

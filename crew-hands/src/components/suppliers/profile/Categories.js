@@ -43,19 +43,11 @@ const Categories = () => {
           <SliderButton />
         </Buttons>
         <Buttons>
-          <Label>Veranstaltungstechnik</Label>
-          <SliderButton />
-        </Buttons>
-        <Buttons>
           <Label>Video-, Mediatechnik</Label>
           <SliderButton />
         </Buttons>
         <Buttons>
           <Label>Stage-hand, allrounder</Label>
-          <SliderButton />
-        </Buttons>
-        <Buttons>
-          <Label>Stage-hand</Label>
           <SliderButton />
         </Buttons>
         <Buttons>

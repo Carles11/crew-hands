@@ -5,10 +5,12 @@ import styled from "styled-components";
 import Header from "../../../components/Header";
 import SuppliersNavigation from "../../../components/suppliers/navigation/SuppliersNavigation";
 
+const Wrapper = styled.div`
+  min-height: 80vh;
+`;
 const Section = styled.section`
   font-family: "Raleway", sans-serif;
   padding-left: 20px;
-  min-height: 80vh;
 
   @media only screen and (min-width: 600px) {
     padding-left: 180px;
@@ -36,6 +38,9 @@ const Button = styled.button`
     font-size: 1.2em;
   }
 `;
+const ButtonPosition = styled.div`
+  margin-top: 10px;
+`;
 class InviteHands extends React.Component {
   constructor(props) {
     super(props);
@@ -46,10 +51,13 @@ class InviteHands extends React.Component {
     };
   }
   handleClick = () => {
+    var link = `${(
+      <a href="http://www.crew-hands.de">Einladung akzeptieren</a>
+    )}`;
     window.open(
       `mailto:${
         this.state.items
-      }?subject=Persönliche CREW-HANDS Einladung&body=Hallo, ich nutze Crew-Hands App um unseren Crew-Jobs besser zu organisieren und ich möchte gerne, dass du teil von unsere Crew bist. Bitte klicke unten um die Einladung zu akzeptieren. Grüße!`
+      }?subject=Persönliche Einladung zu CREW-HANDS &body=Hallo, ich nutze Crew-Hands App um unseren Crew-Jobs besser zu organisieren und ich möchte gerne, dass du teil von unsere Crew bist. %0A%0aBitte klicke unten um die Einladung zu akzeptieren. %0A%0aGrüße! %0A%0a${link}`
     );
   };
   handleChange = evt => {
@@ -82,6 +90,7 @@ class InviteHands extends React.Component {
     evt.preventDefault();
 
     var paste = evt.clipboardData.getData("text");
+    // eslint-disable-next-line no-useless-escape
     var emails = paste.match(/[\w\d\.-]+@[\w\d\.-]+\.[\w\d\.-]+/g);
 
     if (emails) {
@@ -117,11 +126,12 @@ class InviteHands extends React.Component {
     return this.state.items.includes(email);
   }
   isEmail(email) {
+    // eslint-disable-next-line no-useless-escape
     return /[\w\d\.-]+@[\w\d\.-]+\.[\w\d\.-]+/.test(email);
   }
   render() {
     return (
-      <div>
+      <Wrapper>
         <Header />
         <Section>
           <SuppliersNavigation />
@@ -155,10 +165,15 @@ class InviteHands extends React.Component {
 
             {this.state.error && <p className="error">{this.state.error}</p>}
           </>
-
-          <button onClick={this.handleClick}>Senden</button>
+          <ButtonPosition>
+            <button onClick={this.handleClick}>Senden</button>
+          </ButtonPosition>
         </Section>
-      </div>
+        <Section>
+          <h2>Mein Crew Team</h2>
+          <p>Crew List will appear here</p>
+        </Section>
+      </Wrapper>
     );
   }
 }
