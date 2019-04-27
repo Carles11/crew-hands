@@ -13,6 +13,9 @@ const Section = styled.section`
     padding-left: 180px;
   }
 `;
+const Button = styled.button`
+  max-width: 100px;
+`;
 
 const SuppliersEinstellungen = () => {
   return (
@@ -20,7 +23,17 @@ const SuppliersEinstellungen = () => {
       <Header />
       <Section>
         <SuppliersNavigation />
-        <h2>Suppliers Einstellungen</h2>
+        <h2>Stage-hand Einstellungen</h2>
+        <section>
+          <label>Anmeldedaten</label>
+          <legend>Username:</legend>USERNAME <Button> ändern</Button>
+          <legend>Password:</legend>PASSWORD <Button> ändern</Button>
+          <legend>E-Mail:</legend>E-MAIL <Button> ändern</Button>
+        </section>
+        <section>
+          <label>Weitere Profiledaten</label>
+          <button> bearbeiten</button>
+        </section>
       </Section>
     </div>
   );

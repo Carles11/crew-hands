@@ -11,7 +11,6 @@ class InputVatNumber extends React.Component {
             value={this.props.vatNumber}
             onChange={this.props.handleChange}
           />
-          <span>Ust.Id.Nr.</span>
         </label>
       </section>
     );

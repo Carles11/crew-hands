@@ -4,9 +4,7 @@ import styled from "styled-components";
 import InputName from "./inputs/InputName";
 import InputEmail from "./inputs/InputEmail";
 import InputAddress from "./inputs/InputAddress";
-import InputOrtPlz from "./inputs/InputOrtPlz";
 import InputTelephone from "./inputs/InputTelephone";
-import InputBranche from "./inputs/InputBranche";
 import InputSubmitButton from "./inputs/InputSubmitButton";
 import InputVatNumber from "./inputs/InputVatNumber";
 
@@ -19,15 +17,16 @@ class InputsGroup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      firmName: "",
       firstName: "",
       lastName: "",
       userName: "",
-      address: "",
+      street: "",
+      streetNr: "",
       email: "",
       ort: "",
       plz: "",
       telephone: "",
-      branche: "",
       vatNumber: "",
 
       hands: [
@@ -35,12 +34,12 @@ class InputsGroup extends React.Component {
           firstName: "",
           lastName: "",
           userName: "",
-          address: "",
+          street: "",
+          streetNr: "",
           email: "",
           ort: "",
           plz: "",
           telephone: "",
-          branche: "",
           vatNumber: ""
         }
       ]
@@ -49,14 +48,14 @@ class InputsGroup extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleChange(e) {
-    this.setState({ [e.target.name]: String(e.target.value) });
+    this.setState({ [e.target.name]: (e.target.value) });
   }
   handleSubmit(e) {
     e.preventDefault();
     const { firstName, lastName, hands } = this.state;
     alert(
       `Incorporated: ${firstName} ${lastName} to hands list. ${
-        hands.length
+      hands.length
       } hands on that list`
     );
   }
@@ -65,6 +64,8 @@ class InputsGroup extends React.Component {
     return (
       <Form onSubmit={this.handleSubmit}>
         <h2>Supplier Profil</h2>
+        <h3>Firmendaten</h3>
+
         <InputName
           firmName={this.state.firmName}
           contactName={this.state.contactName}
@@ -72,23 +73,21 @@ class InputsGroup extends React.Component {
           handleChange={this.handleChange}
         />
         <InputAddress
-          address={this.state.address}
-          handleChange={this.handleChange}
-        />
-        <InputOrtPlz
+          street={this.state.street}
+          streetNr={this.state.streetNr}
           ort={this.state.ort}
           plz={this.state.plz}
           handleChange={this.handleChange}
         />
+        <label>E-Mail</label>
         <InputEmail email={this.state.email} handleChange={this.handleChange} />
+        <label>Telefon</label>
         <InputTelephone
           telephone={this.state.telephone}
           handleChange={this.handleChange}
         />
-        <InputBranche
-          branche={this.state.branche}
-          handleChange={this.handleChange}
-        />
+
+        <label>Steuernummer</label>
         <InputVatNumber
           aboutMe={this.state.aboutMe}
           handleChange={this.handleChange}

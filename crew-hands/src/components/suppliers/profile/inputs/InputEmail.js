@@ -11,7 +11,6 @@ class Email extends React.Component {
             value={this.props.email}
             onChange={this.props.handleChange}
           />
-          <span>E-mail</span>
         </label>
       </section>
     );

@@ -8,17 +8,50 @@ import EditJobForm from "./forms/EditJobForm";
 const JobList = () => {
   //Data
   const jobsData = [
-    { id: 1, client: "8DAW", category: "Messejob" },
-    { id: 2, client: "SPL", category: "Lichttechnik" },
-    { id: 3, client: "Leyendecker", category: "Steigerfahrer" }
+    {
+      id: null,
+      client: "",
+      category: [],
+      date: "",
+      startTime: "",
+      endTime: "",
+      drivingLicense: "",
+      jobCity: "",
+      jobPlz: "",
+      jobStreet: "",
+      jobStreetNr: "",
+      jobContact: "",
+      jobContactTel: "",
+      minCall: "",
+      proof: "",
+      jobStatus: ""
+    }
   ];
-  const initialFormState = { id: null, client: "", category: "" };
+  const initialFormState = {
+    id: null,
+    client: "",
+    category: [],
+    date: "",
+    startTime: "",
+    endTime: "",
+    drivingLicense: "",
+    jobCity: "",
+    jobPlz: "",
+    jobStreet: "",
+    jobStreetNr: "",
+    jobContact: "",
+    jobContactTel: "",
+    minCall: "",
+    proof: "",
+    jobStatus: ""
+  };
   //Setting state with hooks
   const [jobs, setJobs] = useState(jobsData);
   const [editing, setEditing] = useState(false);
   const [currentJob, setCurrentJob] = useState(initialFormState);
   //CRUD ops
   const addJob = job => {
+    debugger;
     job.id = jobs.length + 1;
     setJobs([...jobs, job]);
   };
@@ -32,7 +65,24 @@ const JobList = () => {
   };
   const editRow = job => {
     setEditing(true);
-    setCurrentJob({ id: job.id, client: job.client, category: job.category });
+    setCurrentJob({
+      id: job.id,
+      client: job.client,
+      category: job.category,
+      date: job.date,
+      startTime: job.startTime,
+      endTime: job.endTime,
+      drivingLicense: job.drivingLicense,
+      jobCity: job.jobCity,
+      jobPlz: job.jobPlz,
+      jobStreet: job.jobStreet,
+      jobStreetNr: job.jobStreetNr,
+      jobContact: job.jobContact,
+      jobContactTel: job.jobContactTel,
+      minCall: job.minCall,
+      proof: job.proof,
+      jobStatus: job.jobStatus
+    });
   };
 
   return (

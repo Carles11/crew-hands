@@ -12,7 +12,6 @@ class Telephone extends React.Component {
             value={this.props.telephone}
             onChange={this.props.handleChange}
           />
-          <span className="label">Telefon</span>
           <span className="border" />
         </label>
       </section>

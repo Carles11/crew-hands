@@ -11,24 +11,15 @@ const Fragment = styled.div`
 
 const InputTime = props => {
   return (
-    <section>
-      <Fragment>
-        <legend>Von</legend>
-        <InputStartTime
-          type="time"
-          name="startTime"
-          startTime={props.startTime}
-          handleInput={props.handleInputChange}
-        />
-        <legend>bis</legend>
-        <InputEndTime
-          type="time"
-          name="startTime"
-          startTime={props.endTime}
-          handleInput={props.handleInputChange}
-        />
-      </Fragment>
-    </section>
+    <Fragment>
+      <legend>Von</legend>
+      <InputStartTime
+        startTime={props.startTime}
+        handleInput={props.handleInput}
+      />
+      <legend>bis</legend>
+      <InputEndTime startTime={props.endTime} handleInput={props.handleInput} />
+    </Fragment>
   );
 };
 

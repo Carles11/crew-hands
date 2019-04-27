@@ -1,23 +1,47 @@
 import React from "react";
+import styled from "styled-components";
+
+import InputOrt from "./inputsAddress/InputOrt";
+import InputPlz from "./inputsAddress/InputPlz";
+import InputStreet from "./inputsAddress/InputStreet";
+import InputStreetNr from "./inputsAddress/InputStreetNr";
+
+const Label = styled.label`
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+`;
 
 class InputAddress extends React.Component {
   render() {
     return (
       <section>
-        <label>
-          <input
-            type="text"
-            name="city"
-            value={this.props.city}
-            onChange={this.props.handleChange}
+        <legend>Firmenadresse</legend>
+        <Label>
+          <label>Str. </label>
+          <InputStreet
+            value={this.props.street}
+            handleChange={this.props.handleChange}
           />
-          <input
-            type="text"
-            name="address"
-            value={this.props.address}
-            onChange={this.props.handleChange}
+          <span className="border" />
+          <label>Nr. </label>
+          <InputStreetNr
+            value={this.props.streetNr}
+            handleChange={this.props.handleChange}
           />
-        </label>
+        </Label>
+        <Label>
+          <label>Ort </label>
+          <InputOrt
+            ort={this.props.ort}
+            handleChange={this.props.handleChange}
+          />
+          <label>Plz </label>
+          <InputPlz
+            plz={this.props.plz}
+            handleChange={this.props.handleChange}
+          />
+        </Label>
       </section>
     );
   }

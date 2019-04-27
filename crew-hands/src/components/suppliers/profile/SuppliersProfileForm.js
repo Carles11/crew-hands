@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import Categories from "./Categories";
 import InputsGroup from "./InputsGroup";
 import Insurance from "./Insurance";
 import UploadFiles from "./UploadFiles";
@@ -21,7 +20,6 @@ const SuppliersProfileForm = () => {
     <Section>
       <InputsGroup />
       <UploadLogo />
-      <Categories />
       <Insurance />
       <UploadFiles />
     </Section>

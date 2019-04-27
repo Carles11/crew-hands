@@ -1,21 +1,21 @@
 import React from "react";
 
-class InputBranche extends React.Component {
+class Ort extends React.Component {
   render() {
     return (
       <section>
-        <label>
+        <label htmlFor="inp" className="inp">
           <input
             type="text"
-            name="aboutme"
-            value={this.props.aboutMe}
+            name="ort"
+            value={this.props.ort}
             onChange={this.props.handleChange}
           />
-          <span>Branche der Firma</span>
+          <span className="border" />
         </label>
       </section>
     );
   }
 }
 
-export default InputBranche;
+export default Ort;

@@ -1,71 +1,52 @@
 import React from "react";
 import styled from "styled-components";
 
-const Container = styled.div`
-  .switch {
-    display: inline-block;
-    height: 24px;
-    position: relative;
-    width: 50px;
-  }
 
-  .switch input {
-    display: none;
-  }
-
-  .slider {
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: 0.4s;
-  }
-
-  .slider:before {
-    background-color: #fff;
-    bottom: 4px;
-    content: "";
-    height: 16px;
-    left: 4px;
-    position: absolute;
-    transition: 0.4s;
-    width: 16px;
-  }
-
-  input:checked + .slider {
-    border: 1px solid green;
-    background-color: #0a6285;
-  }
-
-  input:checked + .slider:before {
-    transform: translateX(26px);
-  }
-
-  .slider.round {
-    border-radius: 34px;
-  }
-
-  .slider.round:before {
-    border-radius: 50%;
-  }
-
-  body {
-    background-color: #f1f2f3;
-  }
+const Sliders = styled.section`
+display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  margin: 15px;
 `;
-
-const SliderButton = () => {
-  return (
-    <Container>
-      <label className="switch" htmlFor="checkbox">
-        <input type="checkbox" id="checkbox" />
-        <div className="slider round" />
-      </label>
-    </Container>
-  );
-};
+const Label = styled.label`
+  font-family: "Raleway", sans-serif;
+  font-size: 1.1em;
+  padding-right: 5px;
+  padding-left: 35px;
+  min-width: 150px;
+`;
+const Buttons = styled.div`
+  margin: 15px;
+`;
+class SliderButton extends React.Component {
+  state = {
+    active: false
+  }
+  handleClick = e => {
+    this.setState(prevState => ({ active: !prevState.active }))
+  }
+  render() {
+    const { active } = this.state
+    const { label } = this.props
+    const id = `${this.props.label}_checkbox`
+    return (
+      <Sliders className="switch" htmlFor="checkbox">
+        <Label
+          htmlFor={id}
+        >{label}</Label>
+        <Buttons onClick={this.handleClick}>
+          <input
+            type="checkbox"
+            id={id}
+            label={label}
+            checked={active} />
+          <div className="slider round" />
+        </Buttons>
+      </Sliders>
+    );
+  };
+}
 
 export default SliderButton;

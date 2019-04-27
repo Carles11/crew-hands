@@ -2,49 +2,54 @@ import React from "react";
 import Select from "react-select";
 import makeAnimated from "react-select/lib/animated";
 
+
 const InputCategory = props => {
   const options = [
     {
-      name: "tontechnik",
-      value: "Tontechnik",
+      name: "TonTechnik",
+      value: `${props.categories[0]}`,
       label: "Tontechnik"
     },
     {
-      name: "lichttechnik",
-      value: `${props.lichtTechnik}`,
+      name: "lichtTechnik",
+      value: `${props.categories[1]}`,
       label: "Lichttechnik"
     },
     {
-      name: "messeBau",
-      value: `${props.messeBau}`,
-      label: "Messebau"
-    },
-    {
       name: "rigging",
-      value: `${props.lichtTechnik}`,
+      value: `${props.categories[2]}`,
       label: "Rigging"
     },
     {
       name: "stageHand",
-      value: `${props.stageHand}`,
-      label: "StageHand"
+      value: `${props.categories[3]}`,
+      label: "Stage-Hand"
     },
-
     {
       name: "videoTechnik",
-      value: `${props.lichtTechnik}`,
+      value: `${props.categories[4]}`,
       label: "Videotechnik"
+    },
+    {
+      name: "messeBau",
+      value: `${props.categories[5]}`,
+      label: "Messebau"
     }
   ];
   return (
     <Select
       closeMenuOnSelect={false}
       components={makeAnimated()}
-      defaultValue={[options[4]]}
+      defaultValue=""
       isMulti
       options={options}
-      type="text"
-      onChange={props.handleInput}
+    /* closeMenuOnSelect={false}
+    components={makeAnimated()}
+    defaultValue=""
+    isMulti
+    options={options}
+    value={options.name}
+    onChange={props.handleInput} */
     />
   );
 };

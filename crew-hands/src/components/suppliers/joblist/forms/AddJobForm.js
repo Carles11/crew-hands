@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import InputClientName from "./inputs/InputClientName";
 import InputCategory from "./inputs/InputCategory";
 import InputDate from "./inputs/InputDate";
-
 import InputHourRate from "./inputs/InputHourRate";
 import InputDrivingLicense from "./inputs/InputDrivingLicense";
 import InputJobAddress from "./inputs/InputJobAddress";
@@ -11,19 +10,21 @@ import InputTime from "./inputs/InputTime";
 import InputContact from "./inputs/InputContact";
 import InputJobStatus from "./inputs/InputJobStatus";
 import InputSendJobTo from "./inputs/InputSendJobTo";
+import UploadJobProof from "./inputs/UploadJobProof";
+import InputMinCall from "./inputs/InputMinCall";
 
 const AddJobForm = props => {
   const initialFormState = {
     id: null,
     client: "",
-    category: {
-      id: null,
-      tonTechnik: "",
-      lichtTechnik: "",
-      rigging: "",
-      allRounder: "",
-      videoTechnik: ""
-    },
+    category: [
+      "Tontechnik",
+      "lichtTechnik",
+      "rigging",
+      "stageHand",
+      "videoTechnik",
+      "messeBau"
+    ],
     date: "",
     startTime: "",
     endTime: "",
@@ -41,7 +42,6 @@ const AddJobForm = props => {
   const [job, setJob] = useState(initialFormState);
 
   const handleInputChange = e => {
-    debugger;
     const { name, value } = e.target;
     setJob({ ...job, [name]: value });
   };
@@ -58,22 +58,19 @@ const AddJobForm = props => {
     >
       <label>Kunde</label>
       <InputClientName
-        type="text"
-        name="client"
+
         client={job.client}
         handleInput={handleInputChange}
       />
       <label>Job Kategorie</label>
       <InputCategory
-        type="text"
-        name="category"
-        category={job.category.tonTechnik}
+
+        categories={job.category}
         handleInput={handleInputChange}
       />
       <label>Job Datum</label>
       <InputDate
-        type="date"
-        name="date"
+
         date={job.date}
         handleInput={handleInputChange}
       />
@@ -104,6 +101,13 @@ const AddJobForm = props => {
         date={job.hourRate}
         handleInput={handleInputChange}
       />
+      <label>Minimum Call</label>
+      <InputMinCall
+        type="text"
+        name="minCall"
+        date={job.minCall}
+        handleInput={handleInputChange}
+      />
       <label>Führerschein nötig?</label>
       <InputDrivingLicense
         type="select"
@@ -125,6 +129,7 @@ const AddJobForm = props => {
         sendJobTo={job.sendJobTo}
         handleInput={handleInputChange}
       />
+      <UploadJobProof />
       <button>Job einstellen</button>
     </form>
   );

@@ -13,6 +13,9 @@ const Section = styled.section`
     padding-left: 180px;
   }
 `;
+const Button = styled.button`
+  margin: 10px;
+`;
 
 const HandsContact = () => {
   return (
@@ -20,7 +23,12 @@ const HandsContact = () => {
       <Header />
       <Section>
         <HandsNavigation />
-        <h2>Hands Kontakt</h2>
+        <h2>Kontakt</h2>
+        <legend>
+          Wenn du fragen über die Funktionsweise diesen App hast, klicke bitte
+          auf den Knopf unten und schreib uns an:
+        </legend>
+        <Button>Kontakt</Button>
       </Section>
     </div>
   );

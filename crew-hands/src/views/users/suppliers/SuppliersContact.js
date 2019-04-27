@@ -13,13 +13,21 @@ const Section = styled.section`
     padding-left: 180px;
   }
 `;
+const Button = styled.button`
+  margin: 10px;
+`;
 const SuppliersContact = () => {
   return (
     <div>
       <Header />
       <Section>
         <SuppliersNavigation />
-        <h2>Suppliers Kontakt</h2>
+        <h2>Kontakt</h2>
+        <legend>
+          Wenn du fragen über die Funktionsweise diesen App hast, klicke bitte
+          auf den Knopf unten und schreib uns an:
+        </legend>
+        <Button>Kontakt</Button>
       </Section>
     </div>
   );
