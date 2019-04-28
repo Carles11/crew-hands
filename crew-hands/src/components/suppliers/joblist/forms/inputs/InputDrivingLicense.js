@@ -1,5 +1,6 @@
 import React from "react";
 import Select from "react-select";
+import makeAnimated from "react-select/lib/animated";
 
 const options = [
   { value: "pkw", label: "PKW" },
@@ -13,11 +14,11 @@ const options = [
 const InputDrivingLicense = props => {
   return (
     <Select
+      closeMenuOnSelect={false}
+      components={makeAnimated()}
+      defaultValue=""
+      isMulti
       options={options}
-      type="text"
-      name="drivingLicense"
-      value={props.drivingLicense}
-      onChange={props.handleInput}
     />
   );
 };

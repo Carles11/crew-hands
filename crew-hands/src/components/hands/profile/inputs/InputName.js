@@ -17,6 +17,7 @@ class InputName extends React.Component {
     return (
       <section>
         <label htmlFor="inp" className="inp">
+          <span className="label">Vorname</span>
           <input
             type="text"
             id="inp"
@@ -24,10 +25,10 @@ class InputName extends React.Component {
             value={this.props.firstName}
             onChange={this.props.handleChange}
           />
-          <span className="label">Vorname</span>
           <span className="border" />
         </label>
         <label htmlFor="inp" className="inp">
+          <span className="label">Nachname</span>
           <input
             type="text"
             id="inp"
@@ -35,11 +36,11 @@ class InputName extends React.Component {
             value={this.props.lastName}
             onChange={this.props.handleChange}
           />
-          <span className="label">Nachname</span>
-          <span className="border" />{" "}
+          <span className="border" />
         </label>
 
         <label htmlFor="inp" className="inp">
+          <span className="label">User name</span>
           <input
             type="text"
             id="inp"
@@ -47,7 +48,6 @@ class InputName extends React.Component {
             value={this.props.userName}
             onChange={this.props.handleChange}
           />
-          <span className="label">User name</span>
           <span className="border" />
         </label>
       </section>

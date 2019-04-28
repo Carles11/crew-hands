@@ -15,13 +15,13 @@ const categories = ["Tontechnik", "Lichttechnik", "Rigging", "Video-, Mediatechn
 
 const Categories = () => {
   return (
-    <div>
+    <section>
       <SubTitle>Wähle, wo du gut bist:</SubTitle>
       {categories.map(item => (
         <SliderButton
           label={item} />
       ))}
-    </div>
+    </section>
 
   )
 }

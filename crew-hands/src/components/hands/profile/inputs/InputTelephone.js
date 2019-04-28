@@ -5,13 +5,13 @@ class InputTelephone extends React.Component {
     return (
       <section>
         <label>
+          <span>Telefon</span>
           <input
             type="text"
             name="telephone"
             value={this.props.telephone}
             onChange={this.props.handleChange}
           />
-          <span>Telefon</span>
         </label>
       </section>
     );

@@ -4,14 +4,14 @@ class InputAboutMe extends React.Component {
   render() {
     return (
       <section>
-        <label>
+        <label htmlFor="about me">
+          <span>Über mich</span>
           <input
             type="text"
-            name="aboutme"
+            name="aboutMe"
             value={this.props.aboutMe}
             onChange={this.props.handleChange}
           />
-          <span>Über mich</span>
         </label>
       </section>
     );

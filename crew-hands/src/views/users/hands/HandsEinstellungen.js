@@ -14,7 +14,13 @@ const Section = styled.section`
   }
 `;
 const Button = styled.button`
+  font-size:12px;
   max-width: 100px;
+  position: relative;
+`;
+const SubSection = styled.section`
+  display: flex;
+  flex-direction: row;
 `;
 
 const HandsEinstellungen = () => {
@@ -24,16 +30,20 @@ const HandsEinstellungen = () => {
       <Section>
         <HandsNavigation />
         <h2>Stage-hand Einstellungen</h2>
-        <section>
           <label>Anmeldedaten</label>
-          <legend>Username:</legend>USERNAME <Button> ändern</Button>
-          <legend>Password:</legend>PASSWORD <Button> ändern</Button>
-          <legend>E-Mail:</legend>E-MAIL <Button> ändern</Button>
-        </section>
-        <section>
+        <SubSection>
+          <legend>Username:</legend><legend>//this.state.userName</legend> <Button> Ändern</Button>
+        </SubSection>
+<SubSection>
+  <legend>Password:</legend><legend>//this.state.password</legend> <Button> Ändern</Button>
+          </SubSection>
+ <SubSection>
+  <legend>E-Mail:</legend><legend>//this.state.email</legend> <Button> Ändern</Button>
+        </SubSection>
+        <div>
           <label>Weitere Profiledaten</label>
-          <button> bearbeiten</button>
-        </section>
+          <button> Bearbeiten</button>
+        </div>
       </Section>
     </div>
   );

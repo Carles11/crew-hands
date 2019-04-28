@@ -10,7 +10,7 @@ const SubTitle = styled.h2`
   padding-top: 40px;
 `;
 
-const insurances = ["Betreibshaftpflicht", "Krankenversicherung"]
+const insurances = ["Betreibshaftpflicht", "Krankenversicherung", "Andere"]
 const Insurance = () => {
   return (
     <div>

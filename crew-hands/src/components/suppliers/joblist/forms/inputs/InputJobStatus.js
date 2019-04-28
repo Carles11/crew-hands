@@ -1,5 +1,6 @@
 import React from "react";
 import Select from "react-select";
+import makeAnimated from "react-select/lib/animated";
 
 const options = [
   { value: "bestätigt", label: "Bestätigt" },
@@ -9,11 +10,11 @@ const options = [
 const InputJobStatus = props => {
   return (
     <Select
+      closeMenuOnSelect={false}
+      components={makeAnimated()}
+      defaultValue=""
+
       options={options}
-      type="text"
-      name="jobStatus"
-      value={props.jobStatus}
-      onChange={props.handleInput}
     />
   );
 };

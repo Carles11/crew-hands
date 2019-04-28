@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "mongodb": "^3.2.3",
+    "mongoose": "^5.5.4",
     "react": "^16.8.6",
     "react-avatar-edit": "^0.8.2",
     "react-dom": "^16.8.6",

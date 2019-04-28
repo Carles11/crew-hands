@@ -4,7 +4,9 @@ class InputAddress extends React.Component {
   render() {
     return (
       <section>
+
         <label htmlFor="inp" className="inp">
+          <span className="label">Adresse</span>
           <input
             type="text"
             id="inp"
@@ -12,7 +14,6 @@ class InputAddress extends React.Component {
             value={this.props.address}
             onChange={this.props.handleChange}
           />
-          <span className="label">Adresse</span>
           <span className="border" />
         </label>
       </section>

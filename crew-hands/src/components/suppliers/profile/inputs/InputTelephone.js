@@ -4,16 +4,15 @@ class Telephone extends React.Component {
   render() {
     return (
       <section>
-        <label htmlFor="inp" className="inp">
-          <input
-            type="text"
-            id="inp"
-            name="telephone"
-            value={this.props.telephone}
-            onChange={this.props.handleChange}
-          />
-          <span className="border" />
-        </label>
+        <legend>Telefon</legend>
+        <input
+          type="text"
+          id="inp"
+          name="telephone"
+          value={this.props.telephone}
+          onChange={this.props.handleChange}
+        />
+        <span className="border" />
       </section>
     );
   }

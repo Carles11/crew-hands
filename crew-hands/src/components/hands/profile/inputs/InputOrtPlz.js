@@ -5,6 +5,7 @@ class OrtPlz extends React.Component {
     return (
       <section>
         <label htmlFor="inp" className="inp">
+          <span className="label">Ort</span>
           <input
             type="text"
             id="inp"
@@ -12,10 +13,10 @@ class OrtPlz extends React.Component {
             value={this.props.ort}
             onChange={this.props.handleChange}
           />
-          <span className="label">Ort</span>
           <span className="border" />
         </label>
         <label htmlFor="inp" className="inp">
+          <span className="label">PLZ</span>
           <input
             type="text"
             id="inp"
@@ -23,7 +24,6 @@ class OrtPlz extends React.Component {
             value={this.props.plz}
             onChange={this.props.handleChange}
           />
-          <span className="label">PLZ</span>
           <span className="border" />
         </label>
       </section>

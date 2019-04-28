@@ -28,7 +28,6 @@ class InputsGroup extends React.Component {
       plz: "",
       telephone: "",
       vatNumber: "",
-
       hands: [
         {
           firstName: "",
@@ -40,7 +39,10 @@ class InputsGroup extends React.Component {
           ort: "",
           plz: "",
           telephone: "",
-          vatNumber: ""
+          vatNumber: "",
+          category: [],
+          drivingLicense: [],
+          insurance: []
         }
       ]
     };
@@ -60,6 +62,7 @@ class InputsGroup extends React.Component {
     );
   }
 
+
   render() {
     return (
       <Form onSubmit={this.handleSubmit}>
@@ -68,7 +71,8 @@ class InputsGroup extends React.Component {
 
         <InputName
           firmName={this.state.firmName}
-          contactName={this.state.contactName}
+          firstName={this.state.firstName}
+          lastName={this.state.lastName}
           hands={this.state.hands}
           handleChange={this.handleChange}
         />
@@ -79,15 +83,12 @@ class InputsGroup extends React.Component {
           plz={this.state.plz}
           handleChange={this.handleChange}
         />
-        <label>E-Mail</label>
         <InputEmail email={this.state.email} handleChange={this.handleChange} />
-        <label>Telefon</label>
         <InputTelephone
           telephone={this.state.telephone}
           handleChange={this.handleChange}
         />
 
-        <label>Steuernummer</label>
         <InputVatNumber
           aboutMe={this.state.aboutMe}
           handleChange={this.handleChange}

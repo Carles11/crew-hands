@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import Select from "react-select";
+import makeAnimated from "react-select/lib/animated";
 
 import InputJobAddress from "./inputs/InputJobAddress";
 import InputContact from "./inputs/InputContact";
@@ -25,8 +27,38 @@ const EditJobForm = props => {
     const { name, value } = e.target;
     setJob({ ...job, [name]: value });
   };
-
-  return (
+  const options = [
+    {
+      name: "TonTechnik",
+      value: `${props.categories[0]}`,
+      label: "Tontechnik"
+    },
+    {
+      name: "lichtTechnik",
+      value: `${props.categories[1]}`,
+      label: "Lichttechnik"
+    },
+    {
+      name: "rigging",
+      value: `${props.categories[2]}`,
+      label: "Rigging"
+    },
+    {
+      name: "stageHand",
+      value: `${props.categories[3]}`,
+      label: "Stage-Hand"
+    },
+    {
+      name: "videoTechnik",
+      value: `${props.categories[4]}`,
+      label: "Videotechnik"
+    },
+    {
+      name: "messeBau",
+      value: `${props.categories[5]}`,
+      label: "Messebau"
+    }
+  ]; return (
     <form
       onSubmit={e => {
         e.preventDefault();
@@ -41,12 +73,15 @@ const EditJobForm = props => {
         onChange={handleInputChange}
       />
       <label>Kategorie</label>
-      <input
-        type="text"
-        name="category"
-        value={job.category}
-        onChange={handleInputChange}
+
+      <Select
+        closeMenuOnSelect={false}
+        components={makeAnimated()}
+        defaultValue=""
+        isMulti
+        options={options}
       />
+
       <label>Job Datum</label>
       <input
         type="date"
@@ -128,7 +163,7 @@ const EditJobForm = props => {
       >
         Abbrechen
       </button>
-    </form>
+    </form >
   );
 };
 
