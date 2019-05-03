@@ -51,7 +51,7 @@ const JobList = () => {
   const [currentJob, setCurrentJob] = useState(initialFormState);
   //CRUD ops
   const addJob = job => {
-    debugger;
+console.log(job)
     job.id = jobs.length + 1;
     setJobs([...jobs, job]);
   };

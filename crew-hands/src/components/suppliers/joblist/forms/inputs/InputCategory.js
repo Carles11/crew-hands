@@ -4,6 +4,7 @@ import makeAnimated from "react-select/lib/animated";
 
 
 const InputCategory = props => {
+  console.log(props)
   const options = [
     {
       name: "TonTechnik",

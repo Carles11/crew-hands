@@ -13,12 +13,10 @@ const SupplierSchema = new mongoose.Schema({
     },
     username: {
         type: String,
-        required: true,
         unique: true,
     },
     password: {
         type: String,
-        required: true,
     },
     email: { 
         type: String, 
@@ -48,48 +46,15 @@ const SupplierSchema = new mongoose.Schema({
     },
     role: {
         type: String,
-        required: true,
     },
     created: {
         type: Date,
         default: Date.now,
     },
-    hands:[{ 
-        firstName: String, 
-        lastName: String, 
-        userName: String, 
-        address: String, 
-        city: String, 
-        plz: Number, 
-        email: String, 
-        telephone: Number, 
-        aboutMe: String,
-        avatar: {
-            src: {
-                type: String,
-            }
-        },
-        category: {
-            type: Array
-        },
-        drivingLicense: {
-            type: Array
-        },
-        insurance:{
-            type: Array
-        },
-        documents:[{
-            items: [{
-                title: {
-                    type: String,
-                },
-                url: {
-                    type: String,
-                    required: true,
-                },
-            }],
-        }],
-    }]
+    logo: String,
+    hands:{
+        type: Array
+    }
 });
 
 

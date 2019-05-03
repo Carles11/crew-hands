@@ -52,8 +52,8 @@ const AddJobForm = props => {
     <form
       onSubmit={e => {
         e.preventDefault();
-        if (!job.client || !job.jobStatus || !job.date || !job.startTime) return;
-
+        if (!job.client) return;
+console.log(job)
         props.addJob(job);
         setJob(initialFormState);
       }}
@@ -132,8 +132,7 @@ const AddJobForm = props => {
         handleInput={handleInputChange}
       />
       <UploadJobProof />
-      <button onClick={clearForm}
-      >Job einstellen</button>
+      <button>Job einstellen</button>
     </form>
   );
 };
