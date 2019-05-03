@@ -6,6 +6,6 @@ const router = Router()
 router
   .route('/')
   .get(ctrl.list)
-  .post(ctrl.create)
+  // .post(ctrl.create)
   
 export default router
