@@ -10,7 +10,7 @@ class Telephone extends React.Component {
           id="inp"
           name="telephone"
           value={this.props.telephone}
-          onChange={this.props.handleChange}
+          onChange={this.props.onChange}
         />
         <span className="border" />
       </section>

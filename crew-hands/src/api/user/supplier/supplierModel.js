@@ -2,8 +2,13 @@ const mongoose = require('mongoose');
 
 const SupplierSchema = new mongoose.Schema({
     firmname: {
+        type: String
+    },
+    username: {
         type: String,
-        required: true,
+    },
+    password: {
+        type: String,
     },
     firstname: {
         type: String,
@@ -11,49 +16,47 @@ const SupplierSchema = new mongoose.Schema({
     lastname: {
         type: String,
     },
-    username: {
-        type: String,
-        unique: true,
+    email: {
+        type: String
     },
-    password: {
-        type: String,
-    },
-    email: { 
-        type: String, 
-        required: true, 
-        unique: true },
-    street: {
-        type: String,
-    },
-    streetNr: {
-        type: Number,
-    },
-    ort: {
-        type: String,
-    },
-    plz: {
-        type: Number,
+    address: {
+        street: {
+            type: String,
+        },
+        streetnumber: {
+            type: Number,
+        },
+        ort: {
+            type: String,
+        },
+        plz: {
+            type: Number,
+        }
     },
     telephone: {
         type: Number,
     },
-    vatNumber: {
+    vatnumber: {
         type: Number,
     },
-    admin: {
-        type: Boolean,
-        default: false,
+    hands: {
+        type: Array
     },
     role: {
         type: String,
+    },
+    logo: String,
+    versichert: String,
+    docs: {
+        type: Array
     },
     created: {
         type: Date,
         default: Date.now,
     },
-    logo: String,
-    hands:{
-        type: Array
+    admin: {
+        type: Boolean,
+        default: false,
     }
 });
 

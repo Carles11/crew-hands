@@ -8,7 +8,7 @@ class Plz extends React.Component {
           type="text"
           name="plz"
           value={this.props.plz}
-          onChange={this.props.handleChange}
+          onChange={this.props.onChange}
         />
         <span className="border" />
       </label>

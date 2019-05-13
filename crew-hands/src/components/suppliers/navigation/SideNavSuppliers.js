@@ -46,7 +46,7 @@ class SideNavSuppliers extends React.Component {
         <Cross>
           <SuppliersCrossMenu handleClose={this.props.handleClose} />
         </Cross>
-        <MenuItem to="/suppliers-profile">Mein Profil</MenuItem>
+        <MenuItem to="/suppliers-profile-form">Profil bearbeiten</MenuItem>
         <MenuItem to="/suppliers-job-list">Job Liste</MenuItem>
         <MenuItem to="/suppliers-invite-hands">Deine Crew</MenuItem>
         <MenuItem to="/suppliers-einstellungen">Einstellungen</MenuItem>

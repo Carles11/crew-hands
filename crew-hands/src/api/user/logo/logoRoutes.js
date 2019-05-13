@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import * as ctrl from "./supplierController"
+import * as ctrl from "./logoController"
 
 const router = Router()
 

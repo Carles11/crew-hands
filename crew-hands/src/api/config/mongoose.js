@@ -1,11 +1,12 @@
 // @flow
 
 import mongoose from 'mongoose'
-import config from './index'
+import config from './index.js'
+// config.db.url
 
 export default () => {
   mongoose.Promise = global.Promise
-  mongoose.connect(config.db.url, { useNewUrlParser: true })
+  mongoose.connect('mongodb://crew_hands:Code_78@ds147946.mlab.com:47946/crew_hands_dev', { useNewUrlParser: true })
 
   const db = mongoose.connection
 

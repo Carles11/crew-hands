@@ -6,9 +6,9 @@ class InputStreetNr extends React.Component {
       <label htmlFor="inp" className="inp">
         <input
           type="text"
-          name="streetNr"
-          value={this.props.streetNr}
-          onChange={this.props.handleChange}
+          name="streetnumber"
+          value={this.props.streetnumber}
+          onChange={this.props.onChange}
         />
         <span className="border" />
       </label>

@@ -1,48 +1,41 @@
 import React from "react";
 
 class InputName extends React.Component {
-  // handleAddName() {
-  //   this.setState({
-  //     hands: this.props.hands.concat([
-  //       {
-  //         firstName: `${this.props.firstName}`,
-  //         lastName: `${this.props.lastName}`
-  //       }
-  //     ])
-  //   });
-  // }
 
   render() {
     return (
-      <section>
+      <section onChange={this.props.onChange}>
         <legend>Firmenname</legend>
         <input
           type="text"
-          name="firmName"
-          value={this.props.firmName}
-          onChange={this.props.handleChange} />
+          name="firmname"
+          value={this.props.firmname}
+          onChange={this.props.onChange}
+        />
         <legend>Username</legend>
         <input
           type="text"
-          name="userName"
-          value={this.props.userName}
-          onChange={this.props.handleChange} />
+          name="username"
+          value={this.props.username}
+          onChange={this.props.onChange}
+        />
         <legend>Kontaktperson</legend>
         <label>Name</label>
         <input
           type="text"
-          name="firstName"
-          value={this.props.firstName}
-          onChange={this.props.handleChange} />
+          name="firstname"
+          value={this.props.firstname}
+          onChange={this.props.onChange}
+        />
         <label>Nachname</label>
         <input
           type="text"
-          name="lastName"
-          value={this.props.lastName}
-          onChange={this.props.handleChange} />
+          name="lastname"
+          value={this.props.lastname}
+          onChange={this.props.onChange}
+        />
       </section >
     );
   }
 }
-
 export default InputName;

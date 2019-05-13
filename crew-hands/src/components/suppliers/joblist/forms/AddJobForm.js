@@ -45,15 +45,15 @@ const AddJobForm = props => {
     const { name, value } = e.target;
     setJob({ ...job, [name]: value });
   };
-  const clearForm = () => {
-    setJob.category = [];
-  }
+  // const clearForm = () => {
+  //   setJob.category = [];
+  // }
   return (
     <form
       onSubmit={e => {
         e.preventDefault();
         if (!job.client) return;
-console.log(job)
+        console.log(job)
         props.addJob(job);
         setJob(initialFormState);
       }}

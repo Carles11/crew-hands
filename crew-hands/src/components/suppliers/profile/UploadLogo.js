@@ -17,6 +17,9 @@ class UploadLogo extends React.Component {
     this.onBeforeFileLoad = this.onBeforeFileLoad.bind(this);
   }
 
+  onSubmit() {
+
+  }
   onClose() {
     this.setState({ preview: null });
   }
@@ -38,7 +41,7 @@ class UploadLogo extends React.Component {
     `;
     return (
       <div className="padding-left">
-        <h2>Click darauf um dein Firmenlogo hochzuladen:</h2>
+        <h2>Klick darauf um dein Firmenlogo hochzuladen:</h2>
         <Avatar
           width={290}
           height={195}

@@ -9,7 +9,7 @@ class Ort extends React.Component {
             type="text"
             name="ort"
             value={this.props.ort}
-            onChange={this.props.handleChange}
+            onChange={this.props.onChange}
           />
           <span className="border" />
         </label>

@@ -19,27 +19,31 @@ class InputAddress extends React.Component {
         <legend>Firmenadresse</legend>
         <Label>
           <label>Str. </label>
+          {this.props.street}
           <InputStreet
-            value={this.props.street}
-            handleChange={this.props.handleChange}
+            street={this.props.street}
+            onChange={this.props.onChange}
           />
           <span className="border" />
           <label>Nr. </label>
+          {this.props.streetnumber}
           <InputStreetNr
-            value={this.props.streetNr}
-            handleChange={this.props.handleChange}
+            streetnumber={this.props.streetnumber}
+            onChange={this.props.onChange}
           />
         </Label>
         <Label>
           <label>Ort </label>
+          {this.props.ort}
           <InputOrt
             ort={this.props.ort}
-            handleChange={this.props.handleChange}
+            onChange={this.props.onChange}
           />
           <label>Plz </label>
+          {this.props.plz}
           <InputPlz
             plz={this.props.plz}
-            handleChange={this.props.handleChange}
+            onChange={this.props.onChange}
           />
         </Label>
       </section>

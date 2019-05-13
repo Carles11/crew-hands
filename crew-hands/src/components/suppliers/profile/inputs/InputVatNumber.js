@@ -7,9 +7,9 @@ class InputVatNumber extends React.Component {
         <legend>Steuernummer</legend>
         <input
           type="text"
-          name="vatNumber"
-          value={this.props.vatNumber}
-          onChange={this.props.handleChange}
+          name="vatnumber"
+          value={this.props.vatnumber}
+          onChange={this.props.onChange}
         />
       </section>
     );

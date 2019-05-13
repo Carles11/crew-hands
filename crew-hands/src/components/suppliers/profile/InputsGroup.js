@@ -17,85 +17,107 @@ class InputsGroup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firmName: "",
-      firstName: "",
-      lastName: "",
-      userName: "",
-      street: "",
-      streetNr: "",
+      firmname: "",
+      username: "",
+      password: "",
+      firstname: "",
+      lastname: "",
+      address: {
+        street: "",
+        streetnumber: "",
+        ort: "",
+        plz: ""
+      },
       email: "",
-      ort: "",
-      plz: "",
       telephone: "",
-      vatNumber: "",
+      vatnumber: "",
       hands: [
         {
-          firstName: "",
-          lastName: "",
-          userName: "",
-          street: "",
-          streetNr: "",
-          email: "",
-          ort: "",
-          plz: "",
-          telephone: "",
-          vatNumber: "",
-          category: [],
-          drivingLicense: [],
-          insurance: []
+          _id: ""
         }
-      ]
+      ],
+      role: "supplier"
     };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-  handleChange(e) {
-    this.setState({ [e.target.name]: (e.target.value) });
-  }
-  handleSubmit(e) {
-    e.preventDefault();
-    const { firstName, lastName, hands } = this.state;
-    alert(
-      `Incorporated: ${firstName} ${lastName} to hands list. ${
-      hands.length
-      } hands on that list`
-    );
+    this.handleData = this.handleData.bind(this);
+    this.handlePost = this.handlePost.bind(this);
   }
 
+  handleData(e) {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+    var address = this.state.address;
+    address.street = this.state.street;
+    address.streetnumber = this.state.streetnumber;
+    address.ort = this.state.ort;
+    address.plz = this.state.plz;
+    this.setState({ address: address });
+    // this.resetForm(name);
+    // // this.cleanFields(elements)
+  }
+  handlePost = async () => {
+    try {
+      console.log("state", this.state)
+      const response = await fetch("http://localhost:9000/api/user/supplier", {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify(this.state)
+
+      })
+      console.log(response)
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+
+  resetForm(name) {
+
+    this.setState({ [name]: "" });
+  };
+  // cleanFields = elements => {
+  //   Array.from(elements).forEach(el => { el.value = "" }
+  //   )
+  // }
 
   render() {
     return (
-      <Form onSubmit={this.handleSubmit}>
-        <h2>Supplier Profil</h2>
+      <Form onSubmit={e => {
+        console.log(e)
+        e.preventDefault()
+        this.handlePost()
+      }} >
+        <h2>Job Supplier Profil</h2>
         <h3>Firmendaten</h3>
 
         <InputName
-          firmName={this.state.firmName}
-          firstName={this.state.firstName}
-          lastName={this.state.lastName}
-          hands={this.state.hands}
-          handleChange={this.handleChange}
+          firmname={this.state.firmname}
+          firstname={this.state.firstname}
+          username={this.state.username}
+          lastname={this.state.lastname}
+          onChange={this.handleData}
         />
         <InputAddress
           street={this.state.street}
-          streetNr={this.state.streetNr}
+          streetnumber={this.state.streetnumber}
           ort={this.state.ort}
           plz={this.state.plz}
-          handleChange={this.handleChange}
+          onChange={this.handleData}
         />
-        <InputEmail email={this.state.email} handleChange={this.handleChange} />
+        <InputEmail email={this.state.email} onChange={this.handleData} />
         <InputTelephone
           telephone={this.state.telephone}
-          handleChange={this.handleChange}
+          onChange={this.handleData}
         />
 
         <InputVatNumber
-          aboutMe={this.state.aboutMe}
-          handleChange={this.handleChange}
+          vatnumber={this.state.vatnumber}
+          onChange={this.handleData}
         />
         <InputSubmitButton
-          vatNumber={this.state.vatNumber}
-          handleChange={this.handleChange}
+          type="submit"
         />
       </Form>
     );

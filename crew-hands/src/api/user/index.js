@@ -1,7 +1,7 @@
 
 import { Router } from 'express'
 
-import user from './user'
+import supplier from './supplier/supplierRoutes.js'
 // import hands from './user/hand/handRoutes'
 // import jobs from './job/jobRoutes'
 // import clients from './user/supplier/client/clientRoutes'
@@ -11,7 +11,7 @@ import user from './user'
 
 const router = Router()
 
-router.use('/user', user)
+router.use('/supplier', supplier)
 // router.use('/users', hands)
 // router.use('/jobs'), jobs)
 // router.use('/clients'), clients)
