@@ -1,5 +1,6 @@
 
 import Logo from './logoModel'
+import fs from 'fs'
 
 // import { crudControllers } from '../../.././utils/crud'
 // import { Logo } from './logo.js'
@@ -16,11 +17,15 @@ export const list = async (req, res, next) => {
 }
 
 export const create = async (req, res) => {
+
   console.log(req.body)
   try {
-    const newLogo = await new Logo(req.body)
+
+    var newLogo = await new Logo(req.body);
+    newLogo.img.data = fs.readFileSync(req.files.userPhoto.path)
+    newLogo.img.contentType = "image/png";
     await newLogo.save()
-    //await setMail(newLogo)
+
     const Logos = await Logo.find({})
     return res.status(201).json({ success: true, data: Logos })
   } catch (err) {
@@ -50,11 +55,24 @@ export const remove = async (req, res) => {
   }
 }
 
+export const logoLoad = async (req, res, next, id) => {
+  try {
+    var newLogo = new Logo();
+    newLogo.img.data = fs.readFileSync(req.files.userPhoto.path)
+    newLogo.img.contentType = "image/png";
+    newLogo.save();
+    // req.logos = await Logo.findById(id)
+    // next()
+  } catch (err) {
+    return res.status(404).json({ success: false, data: err })
+  }
+}
 export const logoById = async (req, res, next, id) => {
   try {
-    req.logos = await Logo.findById(id)
+    req.supplier = await Logo.findById(id)
     next()
   } catch (err) {
     return res.status(404).json({ success: false, data: err })
   }
 }
+

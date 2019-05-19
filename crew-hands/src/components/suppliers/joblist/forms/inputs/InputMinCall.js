@@ -4,8 +4,8 @@ const InputMinCall = props => {
   return (
     <input
       type="number"
-      name="minCall"
-      value={props.minCall}
+      name="mincall"
+      value={props.mincall}
       onChange={props.handleInput}
     />
   );

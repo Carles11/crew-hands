@@ -8,4 +8,8 @@ router
   .get(ctrl.list)
   .post(ctrl.create)
 
+router
+  .route('/:supplierId')
+  .get(ctrl.supplierById)
+  .put(ctrl.update)
 export default router

@@ -7,33 +7,33 @@ const InputCategory = props => {
   console.log(props)
   const options = [
     {
-      name: "TonTechnik",
-      value: `${props.categories[0]}`,
-      label: "Tontechnik"
+      name: "tontechnik",
+      value: "Tonttechniks",
+      label: "Tonttttechnik"
     },
     {
-      name: "lichtTechnik",
-      value: `${props.categories[1]}`,
+      name: "lichttechnik",
+      value: "Lichttechniks",
       label: "Lichttechnik"
     },
     {
       name: "rigging",
-      value: `${props.categories[2]}`,
+      value: "Riggings",
       label: "Rigging"
     },
     {
-      name: "stageHand",
-      value: `${props.categories[3]}`,
+      name: "stagehand",
+      value: "Stage-Hands",
       label: "Stage-Hand"
     },
     {
-      name: "videoTechnik",
-      value: `${props.categories[4]}`,
+      name: "videotechnik",
+      value: "Videotechniks",
       label: "Videotechnik"
     },
     {
-      name: "messeBau",
-      value: `${props.categories[5]}`,
+      name: "messebau",
+      value: "messebaus",
       label: "Messebau"
     }
   ];
@@ -44,6 +44,7 @@ const InputCategory = props => {
       defaultValue=""
       isMulti
       options={options}
+      value={options.value}
     /* closeMenuOnSelect={false}
     components={makeAnimated()}
     defaultValue=""

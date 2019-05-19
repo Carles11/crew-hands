@@ -17,45 +17,41 @@ const AddJobForm = props => {
   const initialFormState = {
     id: null,
     client: "",
-    category: [
-      "Tontechnik",
-      "lichtTechnik",
-      "rigging",
-      "stageHand",
-      "videoTechnik",
-      "messeBau"
-    ],
+    category: [],
     date: "",
-    startTime: "",
-    endTime: "",
-    drivingLicense: "",
-    jobCity: "",
-    jobPlz: "",
-    jobStreet: "",
-    jobStreetNr: "",
-    jobContact: "",
-    jobContactTel: "",
-    minCall: "",
+    starttime: "",
+    endtime: "",
+    drivinglicense: [],
+    jobcity: "",
+    jobplz: "",
+    jobstreet: "",
+    jobstreetnumber: "",
+    jobcontact: "",
+    jobcontactphone: "",
+    mincall: "",
     proof: "",
-    jobStatus: ""
+    jobstatus: "",
+    selectedOptionJobStatus: null,
+    selectedOptionCategory: null,
+    selectedOptionDrivingLicense: null
   };
   const [job, setJob] = useState(initialFormState);
 
   const handleInputChange = e => {
+
     const { name, value } = e.target;
+
     setJob({ ...job, [name]: value });
   };
-  // const clearForm = () => {
-  //   setJob.category = [];
-  // }
+
   return (
     <form
       onSubmit={e => {
         e.preventDefault();
         if (!job.client) return;
         console.log(job)
-        props.addJob(job);
         setJob(initialFormState);
+        props.handleJob(job);
       }}
     >
       <label>Kunde</label>
@@ -66,8 +62,7 @@ const AddJobForm = props => {
       />
       <label>Job Kategorie</label>
       <InputCategory
-
-        categories={job.category}
+        categories={job.categories}
         handleInput={handleInputChange}
       />
       <label>Job Datum</label>
@@ -78,61 +73,61 @@ const AddJobForm = props => {
       />
       <label>Job Uhrzeiten</label>
       <InputTime
-        startTime={job.startTime}
-        endTime={job.endTime}
+        starttime={job.starttime}
+        endtime={job.endtime}
         handleInput={handleInputChange}
       />
       <label>Jobadresse</label>
       <InputJobAddress
-        jobCity={job.jobCity}
-        jobStreet={job.jobStreet}
-        jobPlz={job.jobPlz}
-        jobStreetNr={job.jobStreetNr}
+        jobcity={job.jobcity}
+        jobstreet={job.jobstreet}
+        jobplz={job.jobplz}
+        jobstreetnumber={job.jobstreetnumber}
         handleInput={handleInputChange}
       />
       <label>Kontaktdaten vor Ort</label>
       <InputContact
-        jobContact={job.jobCjobContactity}
-        jobContactTel={job.jobContactTel}
+        jobcontact={job.jobcontact}
+        jobcontactphone={job.jobcontactphone}
         handleInput={handleInputChange}
       />
       <label>Stundenlohn</label>
       <InputHourRate
         type="text"
-        name="hourRate"
-        date={job.hourRate}
+        name="hourrate"
+        date={job.hourrate}
         handleInput={handleInputChange}
       />
       <label>Minimum Call</label>
       <InputMinCall
         type="text"
-        name="minCall"
-        date={job.minCall}
+        name="mincall"
+        date={job.mincall}
         handleInput={handleInputChange}
       />
       <label>Führerschein nötig?</label>
       <InputDrivingLicense
-        type="select"
-        name="drivingLicense"
-        date={job.drivingLicense}
+        type="text"
+        name="drivinglicense"
+        date={job.drivinglicense}
         handleInput={handleInputChange}
       />
       <label>Job Status</label>
       <InputJobStatus
-        type="select"
-        name="jobStatus"
-        date={job.jobStatus}
+        type="text"
+        jobstatus={job.jobstatus}
         handleInput={handleInputChange}
-      />{" "}
+
+      />
       <label>Wähle die Hands aus, die diesen Job erhalten sollten</label>
       <InputSendJobTo
         type="text"
         name="sendJobTo"
-        sendJobTo={job.sendJobTo}
+        sendjobto={job.sendjobto}
         handleInput={handleInputChange}
       />
       <UploadJobProof />
-      <button>Job einstellen</button>
+      <button type="Submit">Job einstellen</button>
     </form>
   );
 };

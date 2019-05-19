@@ -41,32 +41,66 @@ class InputsGroup extends React.Component {
     this.handleData = this.handleData.bind(this);
     this.handlePost = this.handlePost.bind(this);
   }
+  // async componentDidMount() {
+  //   const promise = await API.get('schools')
+
+  //   if (promise.success) {
+  //     this.setState({ schools: promise.data })
+  //   }
+  // }
 
   handleData(e) {
     const { name, value } = e.target;
     this.setState({ [name]: value });
+
+    var firmname = this.state.firmname;
+    var username = this.state.username;
+    var password = this.state.password;
+    var firstname = this.state.firstname;
+    var lastname = this.state.lastname;
     var address = this.state.address;
     address.street = this.state.street;
     address.streetnumber = this.state.streetnumber;
     address.ort = this.state.ort;
     address.plz = this.state.plz;
     this.setState({ address: address });
+    var email = this.state.email;
+    var telephone = this.state.telephone;
+    var vatnumber = this.state.vatnumber;
+    var role = this.state.role;
     // this.resetForm(name);
     // // this.cleanFields(elements)
+    return { firmname, username, password, firstname, lastname, address, email, telephone, vatnumber, role }
+
   }
-  handlePost = async () => {
+  handlePost = async body => {
     try {
-      console.log("state", this.state)
+      console.log("body", body)
       const response = await fetch("http://localhost:9000/api/user/supplier", {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
         method: "POST",
-        body: JSON.stringify(this.state)
+        body: JSON.stringify(body)
 
       })
       console.log(response)
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+  handleGet = async () => {
+    try {
+      console.log("state", this.state)
+      const response = await fetch("http://localhost:9000/api/user/supplier/:supplierId", {
+        method: "GET",
+        supplierId: "_id"
+
+      })
+      console.log(response)
+      return response
     } catch (error) {
       console.log(error)
     }
@@ -87,7 +121,7 @@ class InputsGroup extends React.Component {
       <Form onSubmit={e => {
         console.log(e)
         e.preventDefault()
-        this.handlePost()
+        this.handlePost(this.handleData(e))
       }} >
         <h2>Job Supplier Profil</h2>
         <h3>Firmendaten</h3>

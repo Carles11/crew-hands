@@ -24,41 +24,55 @@ const EditJobForm = props => {
   }, [props]);
 
   const handleInputChange = e => {
+    debugger
     const { name, value } = e.target;
     setJob({ ...job, [name]: value });
   };
-  const options = [
+  const optionsCat = [
     {
-      name: "TonTechnik",
-      value: `${props.categories[0]}`,
-      label: "Tontechnik"
+      name: "tontechnik",
+      value: "Tonttechniks",
+      label: "Tonttttechnik"
     },
     {
-      name: "lichtTechnik",
-      value: `${props.categories[1]}`,
+      name: "lichttechnik",
+      value: "Lichttechniks",
       label: "Lichttechnik"
     },
     {
       name: "rigging",
-      value: `${props.categories[2]}`,
+      value: "Riggings",
       label: "Rigging"
     },
     {
-      name: "stageHand",
-      value: `${props.categories[3]}`,
+      name: "stagehand",
+      value: "Stage-Hands",
       label: "Stage-Hand"
     },
     {
-      name: "videoTechnik",
-      value: `${props.categories[4]}`,
+      name: "videotechnik",
+      value: "Videotechniks",
       label: "Videotechnik"
     },
     {
       name: "messeBau",
-      value: `${props.categories[5]}`,
+      value: "messebaus",
       label: "Messebau"
-    }
-  ]; return (
+    }];
+  const optionsStat = [
+    { value: "bestätigt", label: "Bestätigt" },
+    { value: "anfrage", label: "Anfrage" },
+    { value: "abgesagt", label: "Abgesagt" }
+  ];
+  const optionsDrive = [
+    { value: "pkw", label: "PKW" },
+    { value: "lkw 7.5T", label: "LKW bis 7,5T" },
+    { value: "lkw 14T", label: "LKW bis 14T" },
+    { value: "staplers", label: "Stappler" },
+    { value: "lift", label: "Steiger" }
+  ]
+
+  return (
     <form
       onSubmit={e => {
         e.preventDefault();
@@ -73,13 +87,15 @@ const EditJobForm = props => {
         onChange={handleInputChange}
       />
       <label>Kategorie</label>
-
       <Select
         closeMenuOnSelect={false}
         components={makeAnimated()}
         defaultValue=""
         isMulti
-        options={options}
+        options={optionsCat}
+        value={optionsCat.value}
+        onChange={handleInputChange}
+
       />
 
       <label>Job Datum</label>
@@ -94,69 +110,79 @@ const EditJobForm = props => {
         <legend>Von</legend>
         <Input
           type="number"
-          name="startTime"
-          value={job.startTime}
+          name="starttime"
+          value={job.starttime}
           onChange={handleInputChange}
         />
         <legend>bis</legend>
         <Input
           type="number"
-          name="startTime"
-          value={job.endTime}
+          name="endtime"
+          value={job.endtime}
           onChange={handleInputChange}
         />
       </Fragment>
       <label>Jobadresse</label>
       <InputJobAddress
-        jobCity={job.jobCity}
-        jobStreet={job.jobStreet}
-        jobPlz={job.jobPlz}
-        jobStreetNr={job.jobStreetNr}
+        jobcity={job.jobcity}
+        jobstreet={job.jobstreet}
+        jobplz={job.jobplz}
+        jobstreetnumber={job.jobstreetnumber}
         handleInput={handleInputChange}
       />
       <label>Kontaktdaten vor Ort</label>
       <InputContact
-        jobContact={job.jobCjobContactity}
-        jobContactTel={job.jobContactTel}
+        jobcontact={job.obcontact}
+        jobcontactphone={job.jobcontactphone}
         handleInput={handleInputChange}
       />
       <label>Stundenlohn</label>
       <input
         type="number"
-        name="hourRate"
-        value={job.hourRate}
+        name="hourrate"
+        value={job.hourrate}
         onChange={handleInputChange}
       />
       <label>Minimum Call</label>
       <input
         type="number"
-        name="minCall"
-        value={job.minCall}
+        name="mincall"
+        value={job.mincall}
         onChange={handleInputChange}
       />
       <label>Führerschein nötig?</label>
-      <input
-        type="select"
-        name="drivingLicense"
-        value={job.drivingLicense}
+      <Select
+        closeMenuOnSelect={false}
+        components={makeAnimated()}
+        defaultValue=""
+        isMulti
+        options={optionsDrive}
+        value={optionsDrive.value}
         onChange={handleInputChange}
+
       />
+
       <label>Job Status</label>
-      <input
-        type="select"
-        name="jobStatus"
-        value={job.jobStatus}
+      <Select
+        closeMenuOnSelect={false}
+        components={makeAnimated()}
+        defaultValue=""
+        isMulti
+        options={optionsStat}
+        value={optionsStat.value}
         onChange={handleInputChange}
+
       />
+
       <label>Wähle die Hands aus, die diesen Job erhalten sollten</label>
       <InputSendJobTo
         type="text"
-        name="sendJobTo"
-        sendJobTo={job.sendJobTo}
+        name="sendjobto"
+        sendjobto={job.sendjobto}
         handleInput={handleInputChange}
       />
       <UploadJobProof />
-      <button>Ändern</button>
+      <button type="submit">Ändern</button>
       <button
         onClick={() => props.setEditing(false)}
         className="button muted-button"

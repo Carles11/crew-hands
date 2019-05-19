@@ -10,8 +10,8 @@ const InputJobStreetNr = props => {
   return (
     <Fragment
       type="number"
-      name="jobStreetNr"
-      value={props.jobStreetNr}
+      name="jobstreetnumber"
+      value={props.jobstreetnumber}
       onChange={props.handleInput}
     />
   );

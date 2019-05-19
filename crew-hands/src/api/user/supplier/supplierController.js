@@ -28,6 +28,16 @@ export const create = async (req, res) => {
     return res.status(500).json({ success: false, data: err })
   }
 }
+
+export const supplierById = async (req, res, next, id) => {
+  try {
+    req.supplier = await Supplier.findById(id)
+    next()
+  } catch (err) {
+    return res.status(404).json({ success: false, data: err })
+  }
+}
+
 export const update = async (req, res) => {
   try {
     const updateSupplier = Object.assign(req.supplier, req.body)
@@ -47,14 +57,5 @@ export const remove = async (req, res) => {
     return res.status(200).json({ success: true, data: suppliers })
   } catch (err) {
     return res.status(500).json({ success: false, data: err })
-  }
-}
-
-export const supplierById = async (req, res, next, id) => {
-  try {
-    req.supplier = await Supplier.findById(id)
-    next()
-  } catch (err) {
-    return res.status(404).json({ success: false, data: err })
   }
 }

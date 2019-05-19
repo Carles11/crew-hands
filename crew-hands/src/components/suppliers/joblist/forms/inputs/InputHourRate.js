@@ -4,8 +4,8 @@ const InputHourRate = props => {
   return (
     <input
       type="number"
-      name="hourRate"
-      value={props.hourRate}
+      name="hourrate"
+      value={props.hourrate}
       onChange={props.handleInput}
     />
   );

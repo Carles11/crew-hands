@@ -17,8 +17,8 @@ const InputContact = props => {
           <legend>Name</legend>
           <InputContactName
             type="text"
-            name="jobContact"
-            jobContact={props.jobContact}
+            name="jobcontact"
+            jobcontact={props.jobcontact}
             handleInput={props.handleInput}
           />
         </div>
@@ -26,8 +26,8 @@ const InputContact = props => {
           <legend>Telefonnummer</legend>
           <InputContactTel
             type="number"
-            name="startTime"
-            startTime={props.endTime}
+            name="jobcontactphone"
+            jobcontactphone={props.jobcontactphone}
             handleInput={props.handleInput}
           />
         </div>

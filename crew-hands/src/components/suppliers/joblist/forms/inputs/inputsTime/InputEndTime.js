@@ -8,8 +8,8 @@ const InputEndTime = props => {
   return (
     <Fragment
       type="time"
-      name="endTime"
-      value={props.endTime}
+      name="endtime"
+      value={props.endtime}
       onChange={props.handleInput}
     />
   );

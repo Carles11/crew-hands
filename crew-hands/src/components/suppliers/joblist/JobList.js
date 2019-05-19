@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, Fragment } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 
 import JobTable from "./tables/JobTable";
 import AddJobForm from "./forms/AddJobForm";
@@ -7,54 +7,77 @@ import EditJobForm from "./forms/EditJobForm";
 
 const JobList = () => {
   //Data
-  const jobsData = [
-    {
-      id: null,
-      client: "",
-      category: [],
-      date: "",
-      startTime: "",
-      endTime: "",
-      drivingLicense: "",
-      jobCity: "",
-      jobPlz: "",
-      jobStreet: "",
-      jobStreetNr: "",
-      jobContact: "",
-      jobContactTel: "",
-      minCall: "",
-      proof: "",
-      jobStatus: ""
-    }
-  ];
   const initialFormState = {
     id: null,
     client: "",
     category: [],
     date: "",
-    startTime: "",
-    endTime: "",
-    drivingLicense: "",
-    jobCity: "",
-    jobPlz: "",
-    jobStreet: "",
-    jobStreetNr: "",
-    jobContact: "",
-    jobContactTel: "",
-    minCall: "",
+    starttime: "",
+    endtime: "",
+    drivinglicense: [],
+    jobcity: "",
+    jobplz: "",
+    jobstreet: "",
+    jobstreetnr: "",
+    jobcontact: "",
+    jobcontactphone: "",
+    mincall: "",
     proof: "",
-    jobStatus: ""
+    jobstatus: []
   };
   //Setting state with hooks
-  const [jobs, setJobs] = useState(jobsData);
+  const [jobs, setJobs] = useState([]);
   const [editing, setEditing] = useState(false);
+  const [fetching, setFetching] = useState(false);
+
   const [currentJob, setCurrentJob] = useState(initialFormState);
   //CRUD ops
-  const addJob = job => {
-console.log(job)
-    job.id = jobs.length + 1;
-    setJobs([...jobs, job]);
-  };
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetch("http://localhost:9000/api/user/job", {
+          method: "GET",
+        })
+        console.log("response", response)
+        setFetching(true)
+        if (response.ok) {
+          const jobsData = await response.json();
+          console.log("fetchResponse", jobsData)
+          setJobs(jobsData.data);
+        }
+        console.log(response)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchData();
+
+  }, [fetching])
+
+
+  const handlePost = async body => {
+    try {
+      const response = await fetch("http://localhost:9000/api/user/job", {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify(body)
+
+      })
+      console.log(response)
+      const jobRes = await response.json();
+      console.log("data", jobRes);
+      setJobs([...jobRes.data]);
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+  console.log("currentJobs", jobs)
+
   const deleteJob = id => {
     setEditing(false);
     setJobs(jobs.filter(job => job.id !== id));
@@ -63,26 +86,15 @@ console.log(job)
     setEditing(false);
     setJobs(jobs.map(job => (job.id === id ? updateJob : job)));
   };
-  const editRow = job => {
+  const editRow = id => {
     setEditing(true);
-    setCurrentJob({
-      id: job.id,
-      client: job.client,
-      category: job.category,
-      date: job.date,
-      startTime: job.startTime,
-      endTime: job.endTime,
-      drivingLicense: job.drivingLicense,
-      jobCity: job.jobCity,
-      jobPlz: job.jobPlz,
-      jobStreet: job.jobStreet,
-      jobStreetNr: job.jobStreetNr,
-      jobContact: job.jobContact,
-      jobContactTel: job.jobContactTel,
-      minCall: job.minCall,
-      proof: job.proof,
-      jobStatus: job.jobStatus
-    });
+    console.log(id);
+
+    const currentJob = jobs.filter(job => job._id === id)
+    console.log(currentJob);
+    setCurrentJob(
+      currentJob[0]
+    );
   };
 
   return (
@@ -101,17 +113,21 @@ console.log(job)
               />
             </Fragment>
           ) : (
-            <Fragment>
-              <h2>Neuen Job eintragen</h2>
-              <AddJobForm addJob={addJob} />
-            </Fragment>
-          )}
+              <Fragment>
+                <h2>Neuen Job eintragen</h2>
+                <AddJobForm
+                  handleJob={handlePost}
+                />
+              </Fragment>
+            )}
         </div>
 
+        )}
         <div className="flex-large">
           <h2>Aktuelle Jobs ({jobs.length})</h2>
-          <JobTable jobs={jobs} editRow={editRow} deleteJob={deleteJob} />
+          <JobTable jobs={!!jobs.length && jobs} editRow={editRow} deleteJob={deleteJob} />
         </div>
+
       </div>
     </div>
   );

@@ -1,17 +1,12 @@
 
 import { Router } from 'express'
 
-import user from './user'
-// import hands from './user/hand/handRoutes'
-// import jobs from './job/jobRoutes'
-// import clients from './user/supplier/client/clientRoutes'
-// import logos from './user/suppliers/logo/logoRoutes'
-// import images from './user/hand/image/imageRoutes'
-// import documents from './document/documentRoutes'
+import User from './user'
+
 
 const router = Router()
 
-router.use('/user', user)
+router.use('/user', User)
 // router.use('/users', hands)
 // router.use('/jobs'), jobs)
 // router.use('/clients'), clients)

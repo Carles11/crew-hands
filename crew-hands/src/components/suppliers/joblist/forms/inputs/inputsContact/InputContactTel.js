@@ -8,8 +8,8 @@ const InputContactTel = props => {
   return (
     <Fragment
       type="number"
-      name="contactTel"
-      value={props.contactTel}
+      name="jobcontactphone"
+      value={props.jobcontactphone}
       onChange={props.handleInput}
     />
   );

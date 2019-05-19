@@ -14,11 +14,11 @@ const InputTime = props => {
     <Fragment>
       <legend>Von</legend>
       <InputStartTime
-        startTime={props.startTime}
+        starttime={props.starttime}
         handleInput={props.handleInput}
       />
       <legend>bis</legend>
-      <InputEndTime startTime={props.endTime} handleInput={props.handleInput} />
+      <InputEndTime endtime={props.endtime} handleInput={props.handleInput} />
     </Fragment>
   );
 };

@@ -18,15 +18,15 @@ const InputJobAddress = props => {
         <legend>Str.</legend>
         <InputJobStreet
           type="textarea"
-          name="jobStreet"
-          jobStreet={props.jobStreet}
+          name="jobstreet"
+          jobStreet={props.jobstreet}
           handleInput={props.handleInput}
         />
         <legend>Nr.</legend>
         <InputJobStreetNr
           type="number"
-          name="jobStreetNr"
-          jobStreetNr={props.jobStreetNr}
+          name="jobstreetnumber"
+          jobStreetNr={props.jobstreetnumber}
           handleInput={props.handleInput}
         />
       </Fragment>
@@ -34,15 +34,15 @@ const InputJobAddress = props => {
         <legend>Ort</legend>
         <InputJobCity
           type="text"
-          name="jobCity"
-          jobCity={props.jobCity}
+          name="jobcity"
+          jobCity={props.jobcity}
           handleInput={props.handleInput}
         />
         <legend>PLZ</legend>
         <InputJobPlz
           type="number"
-          name="jobPlz"
-          jobPlz={props.jobPlz}
+          name="jobplz"
+          jobPlz={props.jobplz}
           handleInput={props.handleInput}
         />
       </Fragment>
