@@ -24,11 +24,10 @@ const EditJobForm = props => {
   }, [props]);
 
   const handleInputChange = e => {
-    debugger
     const { name, value } = e.target;
     setJob({ ...job, [name]: value });
   };
-  const optionsCat = [
+  const optionsCategory = [
     {
       name: "tontechnik",
       value: "Tonttechniks",
@@ -59,12 +58,12 @@ const EditJobForm = props => {
       value: "messebaus",
       label: "Messebau"
     }];
-  const optionsStat = [
+  const optionsStatus = [
     { value: "bestätigt", label: "Bestätigt" },
     { value: "anfrage", label: "Anfrage" },
     { value: "abgesagt", label: "Abgesagt" }
   ];
-  const optionsDrive = [
+  const optionsDrivingLicense = [
     { value: "pkw", label: "PKW" },
     { value: "lkw 7.5T", label: "LKW bis 7,5T" },
     { value: "lkw 14T", label: "LKW bis 14T" },
@@ -79,6 +78,17 @@ const EditJobForm = props => {
         props.updateJob(job.id, job);
       }}
     >
+      <label>Job Status</label>
+      <Select
+        closeMenuOnSelect={false}
+        components={makeAnimated()}
+        defaultValue=""
+        isMulti
+        options={optionsStatus}
+        value={optionsStatus.value}
+        onChange={handleInputChange}
+
+      />
       <label>Kunde</label>
       <input
         type="text"
@@ -92,8 +102,8 @@ const EditJobForm = props => {
         components={makeAnimated()}
         defaultValue=""
         isMulti
-        options={optionsCat}
-        value={optionsCat.value}
+        options={optionsCategory}
+        value={optionsCategory.value}
         onChange={handleInputChange}
 
       />
@@ -156,23 +166,12 @@ const EditJobForm = props => {
         components={makeAnimated()}
         defaultValue=""
         isMulti
-        options={optionsDrive}
-        value={optionsDrive.value}
+        options={optionsDrivingLicense}
+        value={optionsDrivingLicense.value}
         onChange={handleInputChange}
 
       />
 
-      <label>Job Status</label>
-      <Select
-        closeMenuOnSelect={false}
-        components={makeAnimated()}
-        defaultValue=""
-        isMulti
-        options={optionsStat}
-        value={optionsStat.value}
-        onChange={handleInputChange}
-
-      />
 
       <label>Wähle die Hands aus, die diesen Job erhalten sollten</label>
       <InputSendJobTo

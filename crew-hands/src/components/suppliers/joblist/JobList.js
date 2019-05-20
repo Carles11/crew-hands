@@ -29,7 +29,7 @@ const JobList = () => {
   const [jobs, setJobs] = useState([]);
   const [editing, setEditing] = useState(false);
   const [fetching, setFetching] = useState(false);
-
+  const [list, setList] = useState([])
   const [currentJob, setCurrentJob] = useState(initialFormState);
   //CRUD ops
 
@@ -58,6 +58,7 @@ const JobList = () => {
 
   const handlePost = async body => {
     try {
+      debugger
       const response = await fetch("http://localhost:9000/api/user/job", {
         headers: {
           'Accept': 'application/json',
@@ -78,13 +79,33 @@ const JobList = () => {
   }
   console.log("currentJobs", jobs)
 
-  const deleteJob = id => {
+  const handleDelete = async id => {
+    const c = window.confirm(
+      "Bist du sicher, dass dieser Job gelöscht werden soll? Das kanst du danach nicht mehr ändern."
+    )
+
+    if (c) {
+      debugger
+      try {
+        debugger
+        const response = await fetch(`http://localhost:9000/api/user/job/${id}`, {
+          method: "DELETE",
+        })
+        debugger
+        console.log("deleteResponse", response)
+
+      } catch (error) {
+        console.log(error)
+      }
+
+
+    }
+
     setEditing(false);
-    setJobs(jobs.filter(job => job.id !== id));
   };
   const updateJob = (id, updateJob) => {
     setEditing(false);
-    setJobs(jobs.map(job => (job.id === id ? updateJob : job)));
+    setJobs(jobs.map(job => (job._id === id ? updateJob : job)));
   };
   const editRow = id => {
     setEditing(true);
@@ -125,7 +146,7 @@ const JobList = () => {
         )}
         <div className="flex-large">
           <h2>Aktuelle Jobs ({jobs.length})</h2>
-          <JobTable jobs={!!jobs.length && jobs} editRow={editRow} deleteJob={deleteJob} />
+          <JobTable jobs={!!jobs.length && jobs} editRow={editRow} deleteJob={handleDelete} />
         </div>
 
       </div>

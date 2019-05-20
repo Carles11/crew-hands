@@ -54,6 +54,13 @@ const AddJobForm = props => {
         props.handleJob(job);
       }}
     >
+      <label>Job Status</label>
+      <InputJobStatus
+        type="text"
+        jobstatus={job.jobstatus}
+        handleInput={handleInputChange}
+
+      />
       <label>Kunde</label>
       <InputClientName
 
@@ -111,13 +118,6 @@ const AddJobForm = props => {
         name="drivinglicense"
         date={job.drivinglicense}
         handleInput={handleInputChange}
-      />
-      <label>Job Status</label>
-      <InputJobStatus
-        type="text"
-        jobstatus={job.jobstatus}
-        handleInput={handleInputChange}
-
       />
       <label>Wähle die Hands aus, die diesen Job erhalten sollten</label>
       <InputSendJobTo

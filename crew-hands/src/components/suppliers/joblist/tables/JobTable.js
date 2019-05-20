@@ -32,7 +32,10 @@ const JobTable = props => {
                   Bearbeiten
               </button>
                 <button
-                  onClick={() => props.deleteJob(job.id)}
+                  onClick={() => {
+                    console.log("deleteJob_ID", job._id)
+                    props.deleteJob(job._id)
+                  }}
                   className="button muted-button"
                 >
                   Löschen

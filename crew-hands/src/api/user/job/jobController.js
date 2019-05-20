@@ -18,7 +18,7 @@ export const list = async (req, res, next) => {
 
 export const create = async (req, res) => {
 
-  console.log(req.body)
+  console.log("response", req.body)
   try {
     const newJob = await new Job(req.body)
     await newJob.save()
@@ -41,23 +41,25 @@ export const update = async (req, res) => {
   }
 }
 
-export const remove = async (req, res) => {
-  try {
-    const jobToRemove = req.job
-    await jobToRemove.remove()
-    const jobs = await Job.find({})
-    return res.status(200).json({ success: true, data: jobs })
-  } catch (err) {
-    return res.status(500).json({ success: false, data: err })
-  }
-}
+export const remove = async (req, res, id) => {
 
+  Job.deleteOne({
+    _id: JSON.stringify(id)
+  }, function (err, job) {
+    if (err)
+      res.send(err);
+    res.json({
+      status: "success",
+      message: 'Job gelöscht'
+    });
+  });
+}
 export const jobById = async (req, res, next, id) => {
   try {
     req.job = await Job.findById(id)
+    console.log("jobById request", req.job)
     next()
   } catch (err) {
     return res.status(404).json({ success: false, data: err })
   }
 }
-
