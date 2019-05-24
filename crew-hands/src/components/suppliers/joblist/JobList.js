@@ -27,6 +27,7 @@ const JobList = () => {
   };
   //Setting state with hooks
   const [jobs, setJobs] = useState([]);
+  const [loaded, setLoaded] = useState(false)
   const [editing, setEditing] = useState(false);
   const [fetching, setFetching] = useState(false);
   const [list, setList] = useState([])
@@ -39,14 +40,12 @@ const JobList = () => {
         const response = await fetch("http://localhost:9000/api/user/job", {
           method: "GET",
         })
-        console.log("response", response)
         setFetching(true)
         if (response.ok) {
           const jobsData = await response.json();
           console.log("fetchResponse", jobsData)
           setJobs(jobsData.data);
         }
-        console.log(response)
       } catch (error) {
         console.log(error)
       }
@@ -68,7 +67,6 @@ const JobList = () => {
         body: JSON.stringify(body)
 
       })
-      console.log(response)
       const jobRes = await response.json();
       console.log("data", jobRes);
       setJobs([...jobRes.data]);
@@ -86,23 +84,42 @@ const JobList = () => {
 
     if (c) {
       debugger
-      try {
-        debugger
-        const response = await fetch(`http://localhost:9000/api/user/job/${id}`, {
-          method: "DELETE",
-        })
-        debugger
-        console.log("deleteResponse", response)
+      const promise = await fetch(`http://localhost:9000/api/user/job/:${id}`,
+        { method: 'DELETE' })
+      debugger
+      if (promise.ok) {
+        setList({ ...list })
+        console.log("DeletedId", id)
 
-      } catch (error) {
-        console.log(error)
+        debugger
+      } else {
+        debugger
+        return null
       }
-
-
     }
+  }
 
-    setEditing(false);
-  };
+  //             try {
+  //               debugger
+  //               , {
+  //             headers: {
+  //               'Accept': 'application/json',
+  //               'Content-Type': 'application/json'
+  //                 },
+  //             method: "DELETE",
+  //           })
+  //         debugger
+  //         console.log("deleteResponse", response)
+
+  //       } catch (error) {
+  //         console.log(error)
+  //       }
+
+
+  //           }
+
+  // setEditing(false);
+  //   };
   const updateJob = (id, updateJob) => {
     setEditing(false);
     setJobs(jobs.map(job => (job._id === id ? updateJob : job)));

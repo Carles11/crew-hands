@@ -14,6 +14,6 @@ router
   .put(ctrl.update)
   .delete(ctrl.remove)
 
-router.param('jobId', ctrl.jobById)
+// router.param('jobId', ctrl.jobById)
 
 export default router

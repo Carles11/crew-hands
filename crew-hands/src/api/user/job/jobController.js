@@ -41,25 +41,54 @@ export const update = async (req, res) => {
   }
 }
 
-export const remove = async (req, res, id) => {
-
-  Job.deleteOne({
-    _id: JSON.stringify(id)
-  }, function (err, job) {
-    if (err)
-      res.send(err);
-    res.json({
-      status: "success",
-      message: 'Job gelöscht'
-    });
-  });
-}
 export const jobById = async (req, res, next, id) => {
   try {
-    req.job = await Job.findById(id)
-    console.log("jobById request", req.job)
-    next()
+    req.job = await Job.findOneAndDelete(id)
+    console.log("jobFindById request", req.job)
+    return res.status(200).json({ success: true, data: req.job })
   } catch (err) {
     return res.status(404).json({ success: false, data: err })
   }
 }
+export const remove = async (req, res) => {
+  try {
+    req.job = await Job.findOneAndDelete()
+    console.log("jobRemove TRY", req.job)
+    const jobs = await Job.find({})
+    console.log("promiseDAta", res.json())
+    return res.status(200).json({ success: true, data: jobs })
+  } catch (error) {
+    console.log("jobRemove ERROR", error)
+    return res.status(500).json({ succes: false, data: error })
+
+  }
+};
+
+// Job.findByIdAndDelete(req.params.JobId, (err, job) => {
+//   if (err) return res.status(500).send(err);
+//   const response = {
+//     message: "Job has been deleted",
+//     id: id
+//   };
+//   const jobs = await Job.find({})
+//   return res.status(200).send(response)
+// })
+// }
+
+
+
+
+
+    // {
+    //   _id: JSON.stringify(id)
+    // }, function (err, job) {
+    //   if (err) {
+    //     res.send(err)
+    //   } else {
+    //     // res.json({
+    //     //   status: "success",
+    //     //   message: 'Job gelöscht'
+    //     // });
+    //     return res.status(200).json({ success: true, data: res.json })
+    //   }
+    // });
