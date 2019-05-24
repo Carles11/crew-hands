@@ -28,7 +28,8 @@ const JobTable = props => (
                 Bearbeiten
               </button>
               <button
-                onClick={() => props.deleteJob(job._id)}
+                debugger
+                onClick={() => props.deleteJob(job._id, job.client)}
                 className="button muted-button"
               >
                 Löschen

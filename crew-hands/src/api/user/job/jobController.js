@@ -52,7 +52,7 @@ export const jobById = async (req, res, next, id) => {
 }
 export const remove = async (req, res, id) => {
   try {
-    req.job = await Job.findOneAndDelete()
+    req.job = await Job.deleteOne()
     console.log("jobRemove TRY", req.job)
     const jobs = await Job.find({})
     return res.status(200).json({ success: true, data: jobs })

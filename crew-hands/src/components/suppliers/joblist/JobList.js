@@ -76,15 +76,17 @@ const JobList = () => {
   }
   console.log("currentJobs", jobs)
 
-  const handleDelete = async id => {
+  const handleDelete = async (id, job) => {
     const c = window.confirm(
-      "Bist du sicher, dass dieser Job gelöscht werden soll? Das kanst du danach nicht mehr ändern."
+      `Bist du sicher, dass der Job ${job} gelöscht werden soll? Das kanst du danach nicht mehr ändern.`
     )
 
     if (c) {
       debugger
       const promise = await fetch(`http://localhost:9000/api/user/job/:${id}`,
-        { method: 'DELETE' })
+        {
+          method: 'DELETE'
+        })
       debugger
       if (promise.ok) {
 
