@@ -50,12 +50,11 @@ export const jobById = async (req, res, next, id) => {
     return res.status(404).json({ success: false, data: err })
   }
 }
-export const remove = async (req, res) => {
+export const remove = async (req, res, id) => {
   try {
     req.job = await Job.findOneAndDelete()
     console.log("jobRemove TRY", req.job)
     const jobs = await Job.find({})
-    console.log("promiseDAta", res.json())
     return res.status(200).json({ success: true, data: jobs })
   } catch (error) {
     console.log("jobRemove ERROR", error)

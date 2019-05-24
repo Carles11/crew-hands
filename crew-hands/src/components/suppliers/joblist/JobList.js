@@ -30,7 +30,6 @@ const JobList = () => {
   const [loaded, setLoaded] = useState(false)
   const [editing, setEditing] = useState(false);
   const [fetching, setFetching] = useState(false);
-  const [list, setList] = useState([])
   const [currentJob, setCurrentJob] = useState(initialFormState);
   //CRUD ops
 
@@ -88,8 +87,9 @@ const JobList = () => {
         { method: 'DELETE' })
       debugger
       if (promise.ok) {
-        setList({ ...list })
-        console.log("DeletedId", id)
+
+        const jobData = await promise.json();
+        setJobs(jobData.data);
 
         debugger
       } else {
