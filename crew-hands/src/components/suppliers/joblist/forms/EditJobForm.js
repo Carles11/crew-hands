@@ -21,7 +21,7 @@ const EditJobForm = props => {
 
   useEffect(() => {
     setJob(props.currentJob);
-  }, [props]);
+  }, [props.currentJob]);
 
   const handleInputChange = e => {
     const { name, value } = e.target;
@@ -75,7 +75,7 @@ const EditJobForm = props => {
     <form
       onSubmit={e => {
         e.preventDefault();
-        props.updateJob(job.id, job);
+        props.updateJob(job);
       }}
     >
       <label>Job Status</label>

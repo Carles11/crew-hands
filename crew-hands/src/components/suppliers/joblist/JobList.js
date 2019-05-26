@@ -67,7 +67,6 @@ const JobList = () => {
 
       })
       const jobRes = await response.json();
-      console.log("data", jobRes);
       setJobs([...jobRes.data]);
     } catch (error) {
       console.log(error)
@@ -76,65 +75,58 @@ const JobList = () => {
   }
   console.log("currentJobs", jobs)
 
-  const handleDelete = async (id, job) => {
+  const handleDelete = async (job) => {
     const c = window.confirm(
-      `Bist du sicher, dass der Job ${job} gelöscht werden soll? Das kanst du danach nicht mehr ändern.`
+      `Bist du sicher, dass der Job ${job.client} gelöscht werden soll? Das kanst du danach nicht mehr ändern.`
     )
 
     if (c) {
-      debugger
-      const promise = await fetch(`http://localhost:9000/api/user/job/:${id}`,
+      const promise = await fetch(`http://localhost:9000/api/user/job/${job._id}`,
         {
           method: 'DELETE'
         })
-      debugger
       if (promise.ok) {
-
         const jobData = await promise.json();
         setJobs(jobData.data);
 
-        debugger
-      } else {
-        debugger
-        return null
+        } else {
+          return null
       }
     }
   }
 
-  //             try {
-  //               debugger
-  //               , {
-  //             headers: {
-  //               'Accept': 'application/json',
-  //               'Content-Type': 'application/json'
-  //                 },
-  //             method: "DELETE",
-  //           })
-  //         debugger
-  //         console.log("deleteResponse", response)
+  const handleUpdate = async (job) => {
 
-  //       } catch (error) {
-  //         console.log(error)
-  //       }
+    try{
+      const request = await fetch(`http://localhost:9000/api/user/job/${job._id}`,
 
+      {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "PUT",
+        body: JSON.stringify(job),
+      }); 
 
-  //           }
-
-  // setEditing(false);
-  //   };
-  const updateJob = (id, updateJob) => {
-    setEditing(false);
-    setJobs(jobs.map(job => (job._id === id ? updateJob : job)));
-  };
+      if (request.ok) {
+      
+        const jobRes = await request.json();
+      setJobs([...jobRes.data]);
+        } else {
+        throw new Error("req", request)
+      }
+    }catch(error){
+          console.log("este es mi supernice error", error)
+       throw new Error("error message", error)
+    }
+  }
+  
   const editRow = id => {
     setEditing(true);
-    console.log(id);
-
-    const currentJob = jobs.filter(job => job._id === id)
-    console.log(currentJob);
-    setCurrentJob(
-      currentJob[0]
-    );
+    const actualJob = jobs.filter( job => job._id === id)
+    console.log("IDlog", id);
+    setCurrentJob(actualJob[0]);
   };
 
   return (
@@ -149,7 +141,7 @@ const JobList = () => {
                 editing={editing}
                 setEditing={setEditing}
                 currentJob={currentJob}
-                updateJob={updateJob}
+                updateJob={handleUpdate}
               />
             </Fragment>
           ) : (

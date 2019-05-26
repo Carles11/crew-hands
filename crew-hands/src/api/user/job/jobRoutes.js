@@ -10,10 +10,10 @@ router
 
 router
   .route('/:jobId')
-  .get(ctrl.jobById)
+  .get(ctrl.read)
   .put(ctrl.update)
   .delete(ctrl.remove)
 
-// router.param('jobId', ctrl.jobById)
+router.param('jobId', ctrl.jobById)
 
 export default router

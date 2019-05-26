@@ -53,6 +53,9 @@ const JobSchema = new mongoose.Schema({
     },
     jobstatus: {
         type: String
+    },
+    createdBy: {
+        type: String
     }
 });
 

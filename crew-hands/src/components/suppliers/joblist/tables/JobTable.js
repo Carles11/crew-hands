@@ -18,18 +18,16 @@ const JobTable = props => (
             <td>{job.client}</td>
             <td>{job.category}</td>
             <td>{job.date}</td>
-
             <td>
               <button
                 onClick={() => {
-                  props.editRow(job);
+                  props.editRow(job._id);
                 }}
               >
                 Bearbeiten
               </button>
               <button
-                debugger
-                onClick={() => props.deleteJob(job._id, job.client)}
+                onClick={() => props.deleteJob(job)}
                 className="button muted-button"
               >
                 Löschen
