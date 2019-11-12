@@ -6,9 +6,9 @@ class Plz extends React.Component {
       <label htmlFor="inp" className="inp">
         <input
           type="text"
-          name="plz"
-          value={this.props.plz}
-          onChange={this.props.onChange}
+          name="zipcode"
+          value={this.props.zipcode}
+          onChange={this.props.onInputChange}
         />
         <span className="border" />
       </label>

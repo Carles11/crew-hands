@@ -1,133 +1,143 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useState, useEffect, Fragment } from 'react'
 
-import JobTable from "./tables/JobTable";
-import AddJobForm from "./forms/AddJobForm";
-import EditJobForm from "./forms/EditJobForm";
+import JobTable from './tables/JobTable'
+import AddJobForm from './forms/AddJobForm'
+import EditJobForm from './forms/EditJobForm'
 
 const JobList = () => {
   //Data
   const initialFormState = {
     id: null,
-    client: "",
-    category: [],
-    date: "",
-    starttime: "",
-    endtime: "",
+    client: '',
+    jobtitle: '',
+    categoryTontechnik: '',
+    categoryLichttechnik: '',
+    categoryRigging: '',
+    categoryStagehand: '',
+    categoryVideo: '',
+    categoryMessebau: '',
+    date: '',
+    starttime: '',
+    endtime: '',
     drivinglicense: [],
-    jobcity: "",
-    jobplz: "",
-    jobstreet: "",
-    jobstreetnr: "",
-    jobcontact: "",
-    jobcontactphone: "",
-    mincall: "",
-    proof: "",
-    jobstatus: []
-  };
+    street: '',
+    streetnumber: '',
+    city: '',
+    zipcode: '',
+    jobcontact: '',
+    jobcontactphone: '',
+    hourrate: '',
+    mincall: '',
+    proof: '',
+    jobstatus: '',
+    created: '',
+    createdBy: '',
+    selectedOptionJobStatus: null,
+    selectedOptionCategory: null,
+    selectedOptionDrivingLicense: null,
+  }
   //Setting state with hooks
-  const [jobs, setJobs] = useState([]);
+  const [jobs, setJobs] = useState([])
   const [loaded, setLoaded] = useState(false)
-  const [editing, setEditing] = useState(false);
-  const [fetching, setFetching] = useState(false);
-  const [currentJob, setCurrentJob] = useState(initialFormState);
+  const [editing, setEditing] = useState(false)
+  const [fetching, setFetching] = useState(false)
+  const [currentJob, setCurrentJob] = useState(initialFormState)
   //CRUD ops
 
   useEffect(() => {
     async function fetchData() {
+      debugger
       try {
-        const response = await fetch("http://localhost:9000/api/user/job", {
-          method: "GET",
+        const response = await fetch('http://localhost:9000/api/user/job', {
+          method: 'GET',
         })
         setFetching(true)
         if (response.ok) {
-          const jobsData = await response.json();
-          console.log("fetchResponse", jobsData)
-          setJobs(jobsData.data);
+          const jobsData = await response.json()
+          console.log('fetchResponse', jobsData)
+          setJobs(jobsData.data)
         }
       } catch (error) {
         console.log(error)
       }
     }
-    fetchData();
-
+    fetchData()
   }, [fetching])
-
 
   const handlePost = async body => {
     try {
-      debugger
-      const response = await fetch("http://localhost:9000/api/user/job", {
+      const response = await fetch('http://localhost:9000/api/user/job', {
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
         },
-        method: "POST",
-        body: JSON.stringify(body)
-
+        method: 'POST',
+        body: JSON.stringify(body),
       })
-      const jobRes = await response.json();
-      setJobs([...jobRes.data]);
+      const jobRes = await response.json()
+      setJobs([...jobRes.data])
     } catch (error) {
       console.log(error)
     }
-
   }
-  console.log("currentJobs", jobs)
 
-  const handleDelete = async (job) => {
+  const handleDelete = async job => {
     const c = window.confirm(
-      `Bist du sicher, dass der Job ${job.client} gelöscht werden soll? Das kanst du danach nicht mehr ändern.`
+      `Bist du sicher, dass der Job ${
+        job.jobtitle
+      } gelöscht werden soll? Das kanst du danach nicht mehr ändern.`,
     )
-
+    console.log('JobTitle', job.title)
     if (c) {
-      const promise = await fetch(`http://localhost:9000/api/user/job/${job._id}`,
+      const promise = await fetch(
+        `http://localhost:9000/api/user/job/${job._id}`,
         {
-          method: 'DELETE'
-        })
+          method: 'DELETE',
+        },
+      )
       if (promise.ok) {
-        const jobData = await promise.json();
-        setJobs(jobData.data);
-
-        } else {
-          return null
+        const jobData = await promise.json()
+        setJobs(jobData.data)
+      } else {
+        return null
       }
     }
   }
 
-  const handleUpdate = async (job) => {
+  const handleUpdate = async job => {
+    try {
+      const request = await fetch(
+        `http://localhost:9000/api/user/job/${job._id}`,
 
-    try{
-      const request = await fetch(`http://localhost:9000/api/user/job/${job._id}`,
-
-      {
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+        {
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          method: 'PUT',
+          body: JSON.stringify(job),
         },
-        method: "PUT",
-        body: JSON.stringify(job),
-      }); 
+      )
 
       if (request.ok) {
-      
-        const jobRes = await request.json();
-      setJobs([...jobRes.data]);
-        } else {
-        throw new Error("req", request)
+        const jobRes = await request.json()
+        setJobs([...jobRes.data])
+      } else {
+        throw new Error('req', request)
       }
-    }catch(error){
-          console.log("este es mi supernice error", error)
-       throw new Error("error message", error)
+    } catch (error) {
+      console.log('CatchError Update', error)
+      throw new Error('error message', error)
     }
   }
-  
+
   const editRow = id => {
-    setEditing(true);
-    const actualJob = jobs.filter( job => job._id === id)
-    console.log("IDlog", id);
-    setCurrentJob(actualJob[0]);
-  };
+    setEditing(true)
+    const actualJob = jobs.filter(job => job._id === id)
+    console.log('ActualJob', actualJob)
+    setCurrentJob(actualJob[0])
+  }
 
   return (
     <div className="container">
@@ -136,7 +146,9 @@ const JobList = () => {
         <div className="flex-large">
           {editing ? (
             <Fragment>
-              <h2>{currentJob.client} Job bearbeiten</h2>
+              <h2>
+                {currentJob.client}´s {currentJob.jobtitle} Job bearbeiten
+              </h2>
               <EditJobForm
                 editing={editing}
                 setEditing={setEditing}
@@ -145,24 +157,24 @@ const JobList = () => {
               />
             </Fragment>
           ) : (
-              <Fragment>
-                <h2>Neuen Job eintragen</h2>
-                <AddJobForm
-                  handleJob={handlePost}
-                />
-              </Fragment>
-            )}
+            <Fragment>
+              <h2>Neuen Job eintragen</h2>
+              <AddJobForm handleJob={handlePost} />
+            </Fragment>
+          )}
         </div>
-
         )}
         <div className="flex-large">
           <h2>Aktuelle Jobs ({jobs.length})</h2>
-          <JobTable jobs={!!jobs.length && jobs} editRow={editRow} deleteJob={handleDelete} />
+          <JobTable
+            jobs={!!jobs.length && jobs}
+            editRow={editRow}
+            deleteJob={handleDelete}
+          />
         </div>
-
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default JobList;
+export default JobList

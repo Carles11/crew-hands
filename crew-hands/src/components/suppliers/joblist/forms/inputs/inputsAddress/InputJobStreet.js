@@ -9,7 +9,7 @@ const InputJobStreet = props => {
   return (
     <Fragment
       type="textarea"
-      name="jobstreet"
+      name="street"
       value={props.jobstreet}
       onChange={props.handleInput}
     />

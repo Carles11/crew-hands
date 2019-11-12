@@ -7,9 +7,9 @@ class Ort extends React.Component {
         <label htmlFor="inp" className="inp">
           <input
             type="text"
-            name="ort"
-            value={this.props.ort}
-            onChange={this.props.onChange}
+            name="city"
+            value={this.props.city}
+            onChange={this.props.onInputChange}
           />
           <span className="border" />
         </label>

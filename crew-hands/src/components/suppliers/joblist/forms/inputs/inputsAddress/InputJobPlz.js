@@ -8,8 +8,8 @@ const InputJobPlz = props => {
   return (
     <Fragment
       type="text"
-      name="jobplz"
-      value={props.jobplz}
+      name="zipcode"
+      value={props.jobzipcode}
       onChange={props.handleInput}
     />
   );

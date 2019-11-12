@@ -1,12 +1,14 @@
-import React from "react";
-import styled from "styled-components";
-import img from "../../assets/images/theater-truss.jpg";
-import wide from "../../assets/images/stage-light.jpg";
-
-import KontoEinlegenButton from "./KontoEinlegenButton";
+import React from 'react'
+import styled from 'styled-components'
+import img from '../../assets/images/theater-truss.jpg'
+import wide from '../../assets/images/stage-light.jpg'
+import GraphicLeft from '../../assets/images/graphics/homeL.jpg'
+import GraphicCenter from '../../assets/images/graphics/HOME2.jpg'
+import GraphicRight from '../../assets/images/graphics/HOME3.jpg'
+import KontoEinlegenButton from './KontoEinlegenButton'
 
 const Section = styled.section`
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   text-align: center;
   width: 100%;
   color: white;
@@ -38,12 +40,12 @@ const Section = styled.section`
     padding-bottom: 28px;
     font-size: 2em;
   }
-`;
+`
 const Title = styled.h3`
-  padding-top: 25px;
+  padding: 20px 10px;
   font-size: 2em;
   line-height: 1;
-`;
+`
 const Paragraph = styled.p`
   padding-left: 15px;
   padding-right: 15px;
@@ -52,12 +54,61 @@ const Paragraph = styled.p`
   margin: auto;
   line-height: 1.7;
   justify-self: center;
-`;
+`
+
+const FlexContainer = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: white;
+  margin-bottom: 2.5rem;
+  padding: 0.8rem;
+  justify-content: space-around;
+`
+const FlexItem = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+const FoodLabel = styled.p`
+  color: grey;
+  text-align: center;
+`
 
 const HowItWorks = () => {
   return (
     <Section>
       <Title>Wie es funktioniert</Title>
+      <FlexContainer>
+        <FlexItem>
+          <img
+            src={GraphicLeft}
+            height="105px"
+            width="105px"
+            alt="Logo of CriX web development javascript"
+          />
+          <FoodLabel>Job einstellen</FoodLabel>
+        </FlexItem>
+        <FlexItem>
+          <img
+            src={GraphicCenter}
+            height="105px"
+            width="105px"
+            alt="Logo of CriX web development javascript"
+            r
+          />
+          <FoodLabel>Anfragen erhalten </FoodLabel>
+        </FlexItem>
+        <FlexItem>
+          <img
+            src={GraphicRight}
+            height="105px"
+            width="105px"
+            alt="Logo of CriX web development javascript"
+          />
+          <FoodLabel>Job veranstalten</FoodLabel>
+        </FlexItem>
+      </FlexContainer>
       <Paragraph>
         Als Crew-Director meldest du erst deine Firma von Technikern- und
         Stage-Handsvermittlung an. Nur du kannst Personal zu deinen Team
@@ -78,7 +129,7 @@ const HowItWorks = () => {
       </Paragraph>
       <KontoEinlegenButton />
     </Section>
-  );
-};
+  )
+}
 
-export default HowItWorks;
+export default HowItWorks

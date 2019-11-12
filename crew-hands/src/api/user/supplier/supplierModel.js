@@ -26,10 +26,10 @@ const SupplierSchema = new mongoose.Schema({
         streetnumber: {
             type: Number,
         },
-        ort: {
+        city: {
             type: String,
         },
-        plz: {
+        zipcode: {
             type: Number,
         }
     },

@@ -8,7 +8,7 @@ class InputStreetNr extends React.Component {
           type="text"
           name="streetnumber"
           value={this.props.streetnumber}
-          onChange={this.props.onChange}
+          onChange={this.props.onInputChange}
         />
         <span className="border" />
       </label>

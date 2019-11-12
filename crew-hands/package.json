@@ -8,10 +8,12 @@
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "fs": "0.0.1-security",
+    "moment": "^2.24.0",
     "mongodb": "^3.2.3",
     "mongodb-schema": "^8.2.4",
     "mongoose": "^5.5.4",
     "multer": "^1.4.1",
+    "multiselect-dropdown-react": "^1.0.5",
     "react": "^16.8.6",
     "react-avatar-edit": "^0.8.2",
     "react-dom": "^16.8.6",
@@ -19,7 +21,8 @@
     "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
-    "react-select": "^2.4.3",
+    "react-select": "^3.0.3",
+    "react-select-animate": "^1.0.6",
     "styled-components": "^4.2.0"
   },
   "scripts": {

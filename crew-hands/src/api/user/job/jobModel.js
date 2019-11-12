@@ -5,8 +5,26 @@ const JobSchema = new mongoose.Schema({
     client: {
         type: String
     },
-    category: {
-        type: Array
+    jobtitle: {
+        type: String
+    },
+    categorytontechnik: {
+        type: Boolean
+    },
+    categorylichttechnik: {
+        type: Boolean
+    },
+    categoryrigging: {
+        type: Boolean
+    },
+    categorystagehand: {
+        type: Boolean
+    },
+    categoryvideotechnik: {
+        type: Boolean
+    },
+    categorymessebau: {
+        type: Boolean
     },
     date: {
         type: Date
@@ -17,20 +35,32 @@ const JobSchema = new mongoose.Schema({
     endtime: {
         type: String
     },
-    drivinglicense: {
-        type: Array
+    drivingpkw: {
+        type: Boolean
     },
-    jobcity: {
-        type: String
+    drivinglkw7: {
+        type: Boolean
     },
-    jobplz: {
-        type: Number
+    drivinglkw14: {
+        type: Boolean
     },
-    jobstreet: {
-        type: String
+    drivingstappler: {
+        type: Boolean
     },
-    jobstreetnumber: {
-        type: Number
+    drivingsteiger: {
+        type: Boolean
+    },
+    street: {
+        type: String,
+    },
+    streetnumber: {
+        type: Number,
+    },
+    city: {
+        type: String,
+    },
+    zipcode: {
+        type: Number,
     },
     jobcontact: {
         type: String
@@ -51,8 +81,14 @@ const JobSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-    jobstatus: {
-        type: String
+    jobstatusconfirmed: {
+        type: Boolean
+    },
+    jobstatuscancelled: {
+        type: Boolean
+    },
+    jobstatuspendent: {
+        type: Boolean
     },
     createdBy: {
         type: String

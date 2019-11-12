@@ -1,59 +1,51 @@
+/* eslint-disable no-lone-blocks */
 import React from "react";
+
+import { categoryOpts } from './options/DropdownOptions';
+
+// import '../../../../../css/dropdown.css';
 import Select from "react-select";
-import makeAnimated from "react-select/lib/animated";
+// import Multiselect from 'multiselect-dropdown-react';
 
 
 const InputCategory = props => {
-  console.log(props)
-  const options = [
-    {
-      name: "tontechnik",
-      value: "Tonttechniks",
-      label: "Tonttttechnik"
-    },
-    {
-      name: "lichttechnik",
-      value: "Lichttechniks",
-      label: "Lichttechnik"
-    },
-    {
-      name: "rigging",
-      value: "Riggings",
-      label: "Rigging"
-    },
-    {
-      name: "stagehand",
-      value: "Stage-Hands",
-      label: "Stage-Hand"
-    },
-    {
-      name: "videotechnik",
-      value: "Videotechniks",
-      label: "Videotechnik"
-    },
-    {
-      name: "messebau",
-      value: "messebaus",
-      label: "Messebau"
-    }
-  ];
-  return (
-    <Select
+
+  // const  handleChange = e => {
+  //   var options = categoryOpts;
+  //   var categoriesSelection = [];
+  //   for (var i = 0, l = options.length; i < l; i++) {
+  //     if (options[i].selected) {
+  //       categoriesSelection.push(options[i].value);
+  //       return categoriesSelection.value;
+  //     }
+  //   }
+  //   console.log(categoriesSelection);
+  // }
+  return(
+      <Select
       closeMenuOnSelect={false}
-      components={makeAnimated()}
-      defaultValue=""
       isMulti
-      options={options}
-      value={options.value}
-    /* closeMenuOnSelect={false}
-    components={makeAnimated()}
-    defaultValue=""
-    isMulti
-    options={options}
-    value={options.name}
-    onChange={props.handleInput} */
-    />
-  );
+      name={categoryOpts.name}
+      options={categoryOpts}
+      value={categoryOpts.value}
+      className="basic-multi-select"
+      classNamePrefix="select"
+       />
+  )
+  
+  // return (
+  //   <select multiple>
+  //     <option  value={props.ton}>Tontechnik</option>
+  //     <option value={props.licht}>Lichttechnik</option>
+  //     <option value={props.rigging}>Rigging</option>
+  //     <option value={props.stagehand}>Stagehand</option>
+  //     <option value={props.video}>Videotechnik</option>
+  //     <option value={props.messebau}>Messebau</option>
+  //     </select>
+
+  // );
 };
 
 export default InputCategory;
+
+

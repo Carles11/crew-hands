@@ -25,8 +25,8 @@ class InputsGroup extends React.Component {
       address: {
         street: "",
         streetnumber: "",
-        ort: "",
-        plz: ""
+        city: "",
+        zipcode: ""
       },
       email: "",
       telephone: "",
@@ -61,8 +61,8 @@ class InputsGroup extends React.Component {
     var address = this.state.address;
     address.street = this.state.street;
     address.streetnumber = this.state.streetnumber;
-    address.ort = this.state.ort;
-    address.plz = this.state.plz;
+    address.city = this.state.city;
+    address.zipcode = this.state.zipcode;
     this.setState({ address: address });
     var email = this.state.email;
     var telephone = this.state.telephone;
@@ -138,7 +138,7 @@ class InputsGroup extends React.Component {
           streetnumber={this.state.streetnumber}
           ort={this.state.ort}
           plz={this.state.plz}
-          onChange={this.handleData}
+          onInputChange={this.handleData}
         />
         <InputEmail email={this.state.email} onChange={this.handleData} />
         <InputTelephone
