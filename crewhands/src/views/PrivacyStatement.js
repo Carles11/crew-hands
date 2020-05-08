@@ -1,11 +1,10 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import Header from "../components/Header";
+import React from 'react'
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Section = styled.section`
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   padding-left: 20px;
   padding-right: 20px;
 
@@ -15,12 +14,11 @@ const Section = styled.section`
     padding-left: 60px;
     padding-right: 80px;
   }
-`;
+`
 
 const PrivacyStatement = () => {
   return (
     <div>
-      <Header />
       <Section>
         <h2>Datenschutzerklärung</h2>
 
@@ -77,7 +75,7 @@ const PrivacyStatement = () => {
           Zuständige Aufsichtsbehörde bezüglich datenschutzrechtlicher Fragen
           ist der Landesdatenschutzbeauftragte des Bundeslandes, in dem sich der
           Sitz unseres Unternehmens befindet. Der folgende Link stellt eine
-          Liste der Datenschutzbeauftragten sowie deren Kontaktdaten bereit:{" "}
+          Liste der Datenschutzbeauftragten sowie deren Kontaktdaten bereit:{' '}
           <a
             href="https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html"
             target="_blank"
@@ -170,7 +168,7 @@ const PrivacyStatement = () => {
           Website-Nutzung einschließlich Ihrer IP-Adresse mitsamt anschließender
           Verarbeitung durch Google unterbinden. Dies ist möglich, indem Sie das
           über folgenden Link erreichbare Browser-Plugin herunterladen und
-          installieren:{" "}
+          installieren:{' '}
           <a href="https://tools.google.com/dlpage/gaoptout?hl=de">
             https://tools.google.com/dlpage/gaoptout?hl=de
           </a>
@@ -185,7 +183,7 @@ const PrivacyStatement = () => {
         </p>
         <p>
           Einzelheiten zum Umgang mit Nutzerdaten bei Google Analytics finden
-          Sie in der Datenschutzerklärung von Google:{" "}
+          Sie in der Datenschutzerklärung von Google:{' '}
           <a href="https://support.google.com/analytics/answer/6004245?hl=de">
             https://support.google.com/analytics/answer/6004245?hl=de
           </a>
@@ -212,7 +210,7 @@ const PrivacyStatement = () => {
         </p>
         <p>
           <small>
-            Quelle: Datenschutz-Konfigurator von{" "}
+            Quelle: Datenschutz-Konfigurator von{' '}
             <a
               href="http://www.mein-datenschutzbeauftragter.de"
               target="_blank"
@@ -222,10 +220,10 @@ const PrivacyStatement = () => {
           </small>
         </p>
         <button className="button muted-button">
-          <Link to="/">Zum Startseite</Link>
+          <Link to="/">Zur Startseite</Link>
         </button>
       </Section>
     </div>
-  );
-};
-export default PrivacyStatement;
+  )
+}
+export default PrivacyStatement

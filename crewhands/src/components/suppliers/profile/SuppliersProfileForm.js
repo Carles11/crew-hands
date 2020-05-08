@@ -6,7 +6,6 @@ import Insurance from "./Insurance";
 import UploadFiles from "./UploadFiles";
 import UploadLogo from "./UploadLogo";
 import SuppliersNavigation from ".././navigation/SuppliersNavigation";
-import Header from "../../Header";
 
 const Section = styled.section`
   display: flex;
@@ -20,8 +19,6 @@ const Section = styled.section`
 
 const SuppliersProfileForm = () => {
   return (
-    <div>
-      <Header />
       <Section>
         <SuppliersNavigation />
 
@@ -30,7 +27,6 @@ const SuppliersProfileForm = () => {
         <Insurance />
         <UploadFiles />
       </Section>
-    </div>
   );
 };
 

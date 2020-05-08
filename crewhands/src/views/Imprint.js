@@ -1,11 +1,10 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import Header from "../components/Header";
+import React from 'react'
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const SectionName = styled.section`
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   padding-left: 20px;
   padding-right: 20px;
   line-height: 0.3;
@@ -14,9 +13,9 @@ const SectionName = styled.section`
     padding-left: 180px;
     padding-right: 80px;
   }
-`;
+`
 const Section = styled.section`
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   padding-left: 20px;
   padding-right: 20px;
   line-height: 0.3;
@@ -26,7 +25,7 @@ const Section = styled.section`
     padding-left: 180px;
     padding-right: 80px;
   }
-`;
+`
 
 const Title = styled.h2`
   padding-left: 20px;
@@ -35,7 +34,7 @@ const Title = styled.h2`
     padding-left: 180px;
     padding-right: 80px;
   }
-`;
+`
 const SubTitle = styled.h3`
   padding-left: 20px;
   padding-right: 20px;
@@ -43,12 +42,11 @@ const SubTitle = styled.h3`
     padding-left: 180px;
     padding-right: 80px;
   }
-`;
+`
 
 const Imprint = () => {
   return (
     <div>
-      <Header />
       <Title>Impressum</Title>
       <SubTitle>CriX Web Development</SubTitle>
 
@@ -80,10 +78,10 @@ const Imprint = () => {
         <br />
         <br />
         <button className="button muted-button">
-          <Link to="/">Zum Startseite</Link>
+          <Link to="/">Zur Startseite</Link>
         </button>
       </Section>
     </div>
-  );
-};
-export default Imprint;
+  )
+}
+export default Imprint

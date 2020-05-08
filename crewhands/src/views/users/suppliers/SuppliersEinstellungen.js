@@ -1,26 +1,24 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
-import Header from "../../../components/Header";
-import SuppliersNavigation from "../../../components/suppliers/navigation/SuppliersNavigation";
+import SuppliersNavigation from '../../../components/suppliers/navigation/SuppliersNavigation'
 
 const Section = styled.section`
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   padding-left: 20px;
   min-height: 80vh;
 
   @media only screen and (min-width: 600px) {
     padding-left: 180px;
   }
-`;
+`
 const Button = styled.button`
   max-width: 100px;
-`;
+`
 
 const SuppliersEinstellungen = () => {
   return (
     <div>
-      <Header />
       <Section>
         <SuppliersNavigation />
         <h2>Stage-hand Einstellungen</h2>
@@ -36,6 +34,6 @@ const SuppliersEinstellungen = () => {
         </section>
       </Section>
     </div>
-  );
-};
-export default SuppliersEinstellungen;
+  )
+}
+export default SuppliersEinstellungen

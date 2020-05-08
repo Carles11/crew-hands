@@ -47,7 +47,6 @@ const JobList = () => {
 
   useEffect(() => {
     async function fetchData() {
-      debugger
       try {
         const response = await fetch('http://localhost:9000/api/user/job', {
           method: 'GET',
@@ -84,9 +83,7 @@ const JobList = () => {
 
   const handleDelete = async job => {
     const c = window.confirm(
-      `Bist du sicher, dass der Job ${
-        job.jobtitle
-      } gelöscht werden soll? Das kanst du danach nicht mehr ändern.`,
+      `Bist du sicher, dass der Job ${job.jobtitle} gelöscht werden soll? Das kanst du danach nicht mehr ändern.`,
     )
     console.log('JobTitle', job.title)
     if (c) {

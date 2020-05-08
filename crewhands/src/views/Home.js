@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Header from '../components/Header'
 import HomeTitle from '../components/home/HomeTitle'
 import HomeButtons from '../components/home/HomeButtons'
 import img from '../assets/images/theater-truss.jpg'
@@ -29,7 +28,6 @@ const BgImage = styled.div`
 const Home = () => {
   return (
     <div>
-      <Header />
       <BgImage>
         <HomeTitle />
         <HomeButtons />
