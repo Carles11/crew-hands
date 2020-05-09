@@ -1,42 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-
-const TextBlock = styled.section`
-  max-width: 95%;
-  margin: auto;
-`;
-const Paragraph = styled.h3`
-  font-family: "Raleway", sans-serif;
-  font-size: 1.3em;
-  color: white;
-  padding-left: 10px;
-  padding-top: 150px;
-  padding-bottom: 100px;
-  text-align: center;
-  text-justify: inter-word;
-  max-width: 95%;
-
-  @media screen and (min-width: 601px) {
-    font-size: 1.7em;
-  }
-  @media screen and (min-width: 801px) {
-    font-size: 2em;
-    line-height: 1.2;
-  }
-  @media screen and (min-width: 1111px) {
-    font-size: 3em;
-  }
-`;
+import React from 'react'
+import './home.scss'
 
 const HomeTitle = () => {
-  return (
-    <TextBlock>
-      <Paragraph>
-        Crew-Hands App hilft dir bei der Organisation deiner Crew an Stage-Hand
-        und Technikern jobs.
-      </Paragraph>
-    </TextBlock>
-  );
-};
+    return (
+        <div className="home-container">
+            <h1 className="home-title">Crew-Hands</h1>
+            <h3 className="home-subTitle">Organisiere deine Technik Crew</h3>
+        </div>
+    )
+}
 
-export default HomeTitle;
+export default HomeTitle

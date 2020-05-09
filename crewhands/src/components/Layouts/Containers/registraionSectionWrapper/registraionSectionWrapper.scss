@@ -1,0 +1,78 @@
+@import 'styles/_theme.scss';
+
+.auth0 {
+  padding-bottom: 2px;
+
+  // background: url('/images/background-elements/top-page/intro-img.png')
+  //     no-repeat,
+  //   linear-gradient(to bottom, #0060cf, #003a7d);
+  background: linear-gradient(to bottom, #0060cf, #003a7d);
+  border-bottom: 1px solid #000;
+  color: #fff;
+  padding-bottom: 10rem;
+  background-position: 100% 0;
+
+  @media (min-width: $minWidthDesktopLarge) {
+    padding-bottom: 10.75rem;
+  }
+
+  @media (max-width: $maxWidthTablet) {
+    background-position: 75% 0;
+    padding-bottom: 7.25rem;
+  }
+
+  .top-section {
+    color: #fff;
+    padding-top: 10rem;
+    text-align: center;
+    // padding-bottom: 2.25rem;
+
+    // @media (min-width: $minWidthDesktopLarge) {
+    //   padding-top: 10.75rem;
+    // }
+
+    // @media (max-width: $maxWidthTablet) {
+    //   padding-bottom: 0.75rem;
+    // }
+
+    svg {
+      min-width: 100%;
+      left: 0;
+      display: block;
+      width: 200%;
+      bottom: -2px;
+      z-index: 2;
+      position: absolute;
+      left: -80%;
+      bottom: -2rem;
+
+      @media (min-width: $minWidthPhoneMiddle) {
+        width: 154%;
+        left: -44%;
+      }
+
+      @media (min-width: $minWidthTablet) {
+        width: 100%;
+        bottom: -1rem;
+        left: 0;
+      }
+
+      @media (min-width: $minWidthDesktopLarge) {
+        bottom: -3px;  
+      }
+    }
+  }
+
+  .page-title {
+    @media (max-width: $maxWidthTablet) {
+      font-size: 1.3125rem;
+    }
+  }
+}
+
+.registration {
+  &-form {
+    max-width: 380px;
+    margin: auto;
+  }
+}

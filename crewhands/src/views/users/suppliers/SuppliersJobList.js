@@ -6,23 +6,23 @@ import SuppliersNavigation from '../../../components/suppliers/navigation/Suppli
 import JobList from '../../../components/suppliers/joblist/JobList'
 
 const Section = styled.section`
-  font-family: 'Raleway', sans-serif;
-  padding-left: 20px;
-  min-height: 80vh;
+    font-family: 'PetitaMedium', sans-serif;
+    padding-left: 20px;
+    min-height: 80vh;
 
-  @media only screen and (min-width: 600px) {
-    padding-left: 180px;
-  }
+    @media only screen and (min-width: 600px) {
+        padding-left: 180px;
+    }
 `
 
 const SuppliersJobList = () => {
-  return (
-    <div>
-      <Section>
-        <SuppliersNavigation />
-        <JobList />
-      </Section>
-    </div>
-  )
+    return (
+        <div>
+            <Section>
+                <SuppliersNavigation />
+                <JobList />
+            </Section>
+        </div>
+    )
 }
 export default SuppliersJobList

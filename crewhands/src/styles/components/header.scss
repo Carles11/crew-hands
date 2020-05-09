@@ -1,0 +1,46 @@
+/*START CROSS MENU############################*/
+
+.menu-icon {
+  font-size: 3em;
+  max-width: 45px;
+  display: block;
+  cursor: pointer;
+  transition: transform .2s ease;
+}
+
+.menu-icon:hover {
+  transform: scale(0.9);
+}
+
+.menu-icon:before,
+.menu-icon:after {
+  line-height: .5;
+}
+
+.menu-icon:before {
+  content: '☰';
+  display: block;
+}
+
+.menu-icon:after {
+  content: '╳x';
+  font-size: .75em;
+  font-weight: 800;
+  display: none;
+}
+
+#toggle-menu:checked~label[for="toggle-menu"] .menu-icon {
+  transform: rotate(180deg);
+}
+
+#toggle-menu:checked~label[for="toggle-menu"] .menu-icon:before {
+  display: none;
+}
+
+#toggle-menu:checked~label[for="toggle-menu"] .menu-icon:after {
+  display: block;
+}
+
+/*END OF CROSS MENU*/
+
+/*###########################*/

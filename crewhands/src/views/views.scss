@@ -1,0 +1,20 @@
+@import 'styles/_theme.scss';
+
+
+.bg-image {
+  background-image: url('../assets/images/theater-truss.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  background-attachment: scroll;
+  background-attachment: fixed;
+  height: auto;
+  display: block;
+  max-width: 100%;
+
+  @media only screen and (min-width: 1101px) {
+    background-position: top;
+
+    background-image: url('../assets/images/stage-light.jpg');
+  }
+}

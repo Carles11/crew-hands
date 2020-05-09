@@ -1,0 +1,81 @@
+@import 'styles/_theme.scss';
+
+.simple-section {
+  padding-top: 10rem;
+  padding-bottom: 4rem;
+
+  @media (max-width: $maxWidthTablet){
+    padding-top: 7rem;
+  }
+
+  &.inside-form-steps {
+    min-height: 100vh;
+    padding-top: 0;
+  }
+
+  &.inside-quiz-form {
+    background-image: url('/images/illustrations/pages/VertragsCheck/bg/fill-2.png');
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    padding-bottom: 0;
+
+
+    @media (min-width: $maxWidthTablet) {
+      background-image: url('/images/illustrations/pages/VertragsCheck/bg/fill-2_2x.png');
+      background-repeat: no-repeat;
+      background-position: left;
+    }
+  }
+
+  // &.bg-pic-quiz-home {
+  //   background-image: url('https://res.cloudinary.com/dssldws2k/image/upload/v1571307699/MyPension/color-bg-home-quiz_blueFilter.jpg');
+  //   background-size: cover;
+  //   background-repeat: no-repeat;
+  //   background-position: center bottom;
+  //   width: 100%;
+  //   height: auto;
+  //   margin-bottom: -4rem;
+  // }
+
+  // &.bg-wave-home {
+  //   background-image: url('https://res.cloudinary.com/dssldws2k/image/upload/v1571259654/MyPension/waves/Wave_Mobile.png');
+  //   background-repeat: no-repeat;
+  //   background-position: center top;
+  
+  //   @media (min-width: $maxWidthTablet) {
+  //     background-image: url('https://res.cloudinary.com/dssldws2k/image/upload/v1571259644/MyPension/waves/Wave.png');
+  //     background-repeat: no-repeat;
+  //     background-position: left bottom;
+  //   }
+  // }
+
+  &.inside-quiz-questions {
+    background-image: url('/images/illustrations/pages/VertragsCheck/bg/Background_Graphic_2x.png');
+    background-repeat: no-repeat;
+    background-position: left;
+      @media (min-width: $maxWidthTablet) {
+        background-image: url('/images/illustrations/pages/VertragsCheck/bg/Background_Graphic_2x.png');
+        background-position: inherit;
+
+      }
+  }
+
+  &.inside-graphic-questions {
+    padding-bottom: 0;
+    padding-left: -20rem;
+    padding-right: 0;
+    margin-left: -6rem;
+  }
+
+  &.inside-result {
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+
+  }
+
+  &.inside-quiz-nav {
+    margin: 1rem;
+  }
+
+}

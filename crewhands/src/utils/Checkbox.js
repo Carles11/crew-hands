@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 
 class Checkbox extends React.Component {
     state = {
-        active: false
+        active: false,
     }
 
     static propTypes = {
         label: PropTypes.string.isRequired,
         handleCheckbox: PropTypes.func.isRequired,
-        send: PropTypes.bool.isRequired
+        send: PropTypes.bool.isRequired,
     }
 
     componentDidUpdate(prevProps) {
@@ -19,8 +19,8 @@ class Checkbox extends React.Component {
         }
     }
 
-    handleClick = e => {
-        this.setState(prevState => ({ active: !prevState.active }))
+    handleClick = (e) => {
+        this.setState((prevState) => ({ active: !prevState.active }))
     }
 
     render() {
@@ -37,10 +37,7 @@ class Checkbox extends React.Component {
                     checked={active}
                     onChange={handleCheckbox}
                 />
-                <label
-                    onClick={this.handleClick}
-                    htmlFor={id}
-                >
+                <label onClick={this.handleClick} htmlFor={id}>
                     {label}
                 </label>
             </div>

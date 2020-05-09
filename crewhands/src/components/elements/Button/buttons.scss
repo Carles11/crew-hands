@@ -1,0 +1,297 @@
+@import 'styles/_theme.scss';
+
+button:focus {
+    outline: none;
+}
+
+.modal,
+#root {
+    .btn {
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 500;
+        min-width: 11rem;
+        transition: 0.5s;
+
+        &:active path,
+        &:hover path,
+        path {
+            transition: 0.3s;
+        }
+
+        svg {
+            margin-left: -6px;
+            margin-top: -1px;
+            margin-right: 3px;
+        }
+
+        // size
+
+        &-sm.btn {
+            font-size: 1rem;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            min-height: 3rem;
+            line-height: 1.5;
+            border-radius: 3rem;
+        }
+
+        &-lg.btn {
+            font-size: 1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            min-height: 3rem;
+            border-radius: 3rem;
+            line-height: 1.5;
+            letter-spacing: 0.1px;
+
+            @media (min-width: $minWidthDesktopLarge) {
+                min-height: 3.563rem;
+                border-radius: 3.563rem;
+            }
+        }
+
+        // variant
+
+        &-light {
+            color: $main-color;
+            border: 1px solid $main-color;
+            background: $tertiary-color;
+
+            &:not(:disabled) {
+                &:not(.disabled) {
+
+                    &:active,
+                    &:hover {
+                        color: $tertiary-color;
+                        border: 1px solid $tertiary-color;
+                        background: $main-color;
+                        font-weight: 500;
+                        text-decoration: none;
+
+                    }
+                }
+            }
+        }
+
+        &-primary {
+            color: $secondary-color;
+            background: $main-color;
+            border: 1px solid $secondary-color;
+
+
+            &:hover {
+                background: $secondary-color;
+                color: $main-color;
+                border: 1px solid $main-color;
+
+            }
+        }
+
+        &-light,
+        &-primary {
+            min-width: 8rem;
+            height: 4rem;
+        }
+
+        &-block {
+            @media (max-width: $maxWidthTablet) {
+                max-width: 100%;
+            }
+        }
+
+        &-link {
+            padding-right: 0;
+            padding-left: 0;
+            min-width: 1px;
+        }
+
+        // Vertragscheck question buttons
+        &-quiz.btn {
+            background-color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            max-width: 60px;
+            border: 1px solid $secondary-color;
+            margin: 0.5rem;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            line-height: 1.5;
+            border-radius: 3rem;
+            height: 3rem;
+            color: $secondary-color;
+
+            &.btn-quiz__active,
+            &:hover,
+            &:focus {
+                background-color: $secondary-color;
+                color: white;
+                font-size: 1rem;
+                max-width: 60px;
+                border: 1px solid $secondary-color;
+                margin: 0.5rem;
+                padding-right: 1rem;
+                padding-left: 1rem;
+                line-height: 1.5;
+                border-radius: 3rem;
+            }
+
+            input {
+                display: none;
+            }
+        }
+
+        // Abschluss Mobile Gender Buttons
+
+        &-radioButtons.btn {
+            background-color: white;
+            font-size: 1rem;
+            font-weight: regular;
+            min-width: 1rem !important;
+            border: 1px solid $secondary-color;
+            margin: 0.5rem 19px;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            line-height: 1.5;
+            border-radius: 3rem;
+            height: 2rem;
+            color: $secondary-color;
+
+            &.btn-radioButtons__active {
+                background-color: $secondary-color;
+                color: white;
+                font-size: 1rem;
+                min-width: 5rem !important;
+                border: 1px solid $secondary-color;
+                margin: 0.5rem 19px;
+                padding-right: 1rem;
+                padding-left: 1rem;
+                line-height: 1.5;
+                border-radius: 3rem;
+            }
+
+            input {
+                display: none;
+            }
+        }
+
+        // Outline
+
+        &-outline-light {
+            padding-left: 1rem;
+            padding-right: 1rem;
+
+            &:not(:disabled) {
+                &:not(.disabled) {
+
+                    &:active,
+                    &:hover {
+                        color: #fff;
+
+                        path:last-child {
+                            fill: #fff;
+                        }
+                    }
+
+                    @media (min-width: $minWidthTablet) {
+
+                        &:active,
+                        &:hover {
+                            color: $secondary-color;
+                            // color: $light-black;
+
+                            path:last-child {
+                                fill: $secondary-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &-search {
+            width: 80px;
+            background: url('/images/icons/svg/ic-magnifier.svg') no-repeat,
+                #fff;
+            border: none;
+            background-position: 50% 50%;
+            min-width: 10px;
+        }
+
+        &-footer {
+            @media (min-width: $minWidthTablet) {
+                max-width: 14.69rem;
+            }
+        }
+
+        &-newsletter {
+            min-width: 10px;
+            width: 2.5rem;
+            min-height: 2.5rem;
+            background: #ffffff;
+            border-radius: 3rem;
+            background: url('/images/icons/svg/sprite-icons.svg') -2px 0 no-repeat;
+            background-size: 6.5rem;
+
+            @media (min-width: $minWidthTablet) {
+                width: 3rem;
+                min-height: 3rem;
+                background-size: 8rem;
+            }
+        }
+
+        &-prev,
+        &-next {
+            transition: 0;
+            min-width: 10px;
+            width: 2rem;
+            height: 2rem;
+            background: url('/images/icons/svg/sprite-icons.svg') -2px -100px no-repeat;
+            border-radius: 2rem;
+        }
+
+        &-prev {
+            transform: rotate(180deg);
+        }
+
+        &-toolbar {
+            display: inline-block;
+        }
+
+        .fa.fa-file-text-o {
+            margin-right: 8px;
+            position: relative;
+            top: -1px;
+        }
+    }
+
+    .btn-close,
+    .btn-chat {
+        min-width: 10px;
+        width: 3rem;
+        height: 3rem;
+        background: url('/images/icons/svg/sprite-icons.svg') -1px -48px no-repeat;
+        border-radius: 3rem;
+        background-size: 49px;
+        background: url('/images/icons/svg/chat-btn.svg') 100% 0 no-repeat, #fff;
+        background-size: contain;
+        border-radius: 3rem;
+    }
+
+    .btn-close {
+        position: fixed;
+        top: 1rem;
+        z-index: 2;
+        right: 1rem;
+        transition: 0.5s;
+    }
+}
+
+.align-items-center {
+    .btn-toolbar {
+        margin-left: 0.5rem;
+    }
+}

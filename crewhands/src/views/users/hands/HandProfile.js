@@ -5,19 +5,19 @@ import HandsNavigation from '../../../components/hands/navigation/HandsNavigatio
 import HandsProfileForm from '../../../components/hands/profile/HandsProfileForm'
 
 const Section = styled.section`
-  font-family: 'Raleway', sans-serif;
-  padding-left: 20px;
-  min-height: 80vh;
+    font-family: 'PetitaMedium', sans-serif;
+    padding-left: 20px;
+    min-height: 80vh;
 `
 const HandProfile = () => {
-  return (
-    <div>
-      <Section>
-        <HandsNavigation />
-        <HandsProfileForm />
-      </Section>
-    </div>
-  )
+    return (
+        <div>
+            <Section>
+                <HandsNavigation />
+                <HandsProfileForm />
+            </Section>
+        </div>
+    )
 }
 
 export default HandProfile

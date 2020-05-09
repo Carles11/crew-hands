@@ -7,10 +7,13 @@ router
   .route('/')
   .get(ctrl.list)
   .post(ctrl.create)
+  .put(ctrl.update)
+  .delete(ctrl.remove)
 
 router
   .route('/:jobId')
   .get(ctrl.read)
+  .post(ctrl.create)
   .put(ctrl.update)
   .delete(ctrl.remove)
 
