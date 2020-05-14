@@ -41,6 +41,7 @@ button:focus {
 
             @media (min-width: $minWidthDesktop) {
                 font-size: 2.3rem;
+                font-weight: bolder;
                 padding-right: 2.4rem;
                 padding-left: 2.4rem;
             }
@@ -95,6 +96,8 @@ button:focus {
                 background: $tertiary-color;
                 color: $main-color;
                 border: 1px solid $main-color;
+                font-weight: 500;
+                text-decoration: none;
 
             }
         }
@@ -108,7 +111,7 @@ button:focus {
             @media (min-width: $maxWidthTablet) {
                 height: 5rem;
                 min-width: 18rem;
-                font-size: 6rem;
+                font-size: $bold-font;
 
             }
         }
