@@ -7,12 +7,10 @@ import React from 'react'
 import ResponsiveImage from 'components/ResponsiveImage'
 import * as Media from 'resolutions'
 
-const bgImage = '/images/background-elements/top-page/top-home-bg.jpg'
-const bgImageRetina = '/images/background-elements/top-page/top-home-bg@2x.jpg'
-const bgMobileImage =
-    '/images/background-elements/top-page/top-home-bg-mobile.jpg'
-const bgMobileImageRetina =
-    '/images/background-elements/top-page/top-home-bg-mobile@2x.jpg'
+const bgImage = '@src/assets/images/tools_low.jpg'
+const bgImageRetina = '@src/assets/images/tools_low.jpg'
+const bgMobileImage = '@src/assets/images/tools_low.jpg'
+const bgMobileImageRetina = '@src/assets/images/tools_low.jpg'
 
 const HomePageImage = () => {
     return (
@@ -39,7 +37,7 @@ const HomePageImage = () => {
                     style={{
                         maxWidth: '576px',
                         position: 'relative',
-                        width: '576',
+                        width: '576px',
                         top: 0,
                     }}
                 />

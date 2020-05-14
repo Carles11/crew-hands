@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
 const Section = styled.header`
     display: flex;
     justify-content: flex-end;
     align-items: center;
     color: #0a6284;
+    position: absolute;
     @media screen and (min-width: 601px) {
         font-size: 1.3em;
         padding-left: 170px;
@@ -20,28 +20,13 @@ const Section = styled.header`
 `
 const Title = styled.h2`
     font-family: 'Lobster', cursive;
-    padding-right: 1rem;
-`
-
-/*const Moto = styled.h4`
-  font-family: 'Lobster', cursive;
-  font-weight: 100;
-  padding-right: 15px;
-`*/
-
-const Logo = styled(Link)`
-    text-decoration: none;
-    color: #0a6284;
+    margin: 1.3rem;
 `
 
 const Header = () => {
     return (
         <Section>
-            <Logo to="./">
-                <Title>Crew-Hands</Title>
-            </Logo>
-
-            {/* <Moto>Best stage-hands organizer</Moto> */}
+            <Title>Crew-Hands</Title>
         </Section>
     )
 }

@@ -12,9 +12,10 @@ button:focus {
         display: inline-flex;
         justify-content: center;
         align-items: center;
-        font-weight: 500;
+        font-weight: 700;
         min-width: 11rem;
         transition: 0.5s;
+
 
         &:active path,
         &:hover path,
@@ -31,12 +32,18 @@ button:focus {
         // size
 
         &-sm.btn {
-            font-size: 1rem;
+            font-size: 1.2rem;
             padding-right: 1rem;
             padding-left: 1rem;
-            min-height: 3rem;
-            line-height: 1.5;
-            border-radius: 3rem;
+            min-height: 1rem;
+            line-height: 1;
+            border-radius: 0.2rem;
+
+            @media (min-width: $minWidthDesktop) {
+                font-size: 2.3rem;
+                padding-right: 2.4rem;
+                padding-left: 2.4rem;
+            }
         }
 
         &-lg.btn {
@@ -59,15 +66,15 @@ button:focus {
         &-light {
             color: $main-color;
             border: 1px solid $main-color;
-            background: $tertiary-color;
+            background: $secondary-color;
 
             &:not(:disabled) {
                 &:not(.disabled) {
 
                     &:active,
                     &:hover {
-                        color: $tertiary-color;
-                        border: 1px solid $tertiary-color;
+                        color: $secondary-color;
+                        border: 1px solid $secondary-color;
                         background: $main-color;
                         font-weight: 500;
                         text-decoration: none;
@@ -78,13 +85,14 @@ button:focus {
         }
 
         &-primary {
-            color: $secondary-color;
-            background: $main-color;
-            border: 1px solid $secondary-color;
+            color: $main-color;
+            background: transparent;
+            border: 1px solid $main-color;
+
 
 
             &:hover {
-                background: $secondary-color;
+                background: $tertiary-color;
                 color: $main-color;
                 border: 1px solid $main-color;
 
@@ -94,7 +102,15 @@ button:focus {
         &-light,
         &-primary {
             min-width: 8rem;
-            height: 4rem;
+            height: 2.3rem;
+            font-size: 4rem;
+
+            @media (min-width: $maxWidthTablet) {
+                height: 5rem;
+                min-width: 18rem;
+                font-size: 6rem;
+
+            }
         }
 
         &-block {
@@ -288,10 +304,21 @@ button:focus {
         right: 1rem;
         transition: 0.5s;
     }
-}
 
-.align-items-center {
-    .btn-toolbar {
-        margin-left: 0.5rem;
+    .btn-home {
+        margin: 0.2rem;
+
+        @media(min-width: $minWidthTablet) {
+            margin: 3rem;
+        }
     }
+
+    .align-items-center {
+        .btn-toolbar {
+            margin-left: 0.5rem;
+        }
+    }
+
+
+
 }

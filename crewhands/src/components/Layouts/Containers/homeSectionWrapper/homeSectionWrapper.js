@@ -6,12 +6,12 @@ import './homeSectionWrapper.scss'
 
 const HomeSectionWrapper = ({ children }) => {
     return (
-        <React.Fragment>
+        <>
             <main className="page page_home">
                 <HomePageImage />
                 {children}
             </main>
-        </React.Fragment>
+        </>
     )
 }
 

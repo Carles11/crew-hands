@@ -7,7 +7,6 @@ import App from './App'
 import * as serviceWorker from './serviceWorker'
 import { render } from 'react-dom'
 import CookieConsent from 'react-cookie-consent'
-
 render(
     <Router>
         <App />

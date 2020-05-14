@@ -1,17 +1,15 @@
 import React from 'react'
-
+import HomeButtons from '../components/home/HomeButtons'
 import HomeTitle from '../components/home/HomeTitle'
-import WhatIsCrewHands from '../components/home/WhatIsCrewHands'
-import HowItWorks from '../components/home/HowItWorks'
-import HomeSectionWrapper from '../components/Layouts/Containers/homeSectionWrapper/homeSectionWrapper'
+
+import './views.scss'
 
 const Home = () => {
     return (
-        <HomeSectionWrapper>
+        <div className="bg-image">
             <HomeTitle />
-            <WhatIsCrewHands />
-            <HowItWorks />
-        </HomeSectionWrapper>
+            <HomeButtons />
+        </div>
     )
 }
 
