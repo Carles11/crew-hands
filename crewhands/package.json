@@ -22,7 +22,7 @@
     "mongoose": "^5.5.4",
     "multer": "^1.4.1",
     "multiselect-dropdown-react": "^1.0.5",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "react": "^16.8.6",
     "react-avatar-edit": "^0.8.2",
     "react-cookie-consent": "^3.0.0",
